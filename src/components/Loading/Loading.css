@@ -1,0 +1,110 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  background: #000;
+}
+
+body::before {
+  padding: 7.25em;
+  background: radial-gradient(#e56589 3.25em, #6c97c3 4.25em);
+  content: '';
+}
+
+body::after {
+  position: absolute;
+  top: calc(50% + 6.25em);
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  font: 200 1.5em/ 1.25 sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-animation: f 1s ease-in-out infinite alternate;
+          animation: f 1s ease-in-out infinite alternate;
+  content: 'loading';
+}
+
+@-webkit-keyframes f {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes f {
+  to {
+    opacity: 0;
+  }
+}
+
+div, ::before, ::after {
+  place-self: center;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.loader {
+  display: -ms-grid;
+  display: grid;
+  padding: 2em;
+  background: inherit;
+  -webkit-filter: contrast(9);
+          filter: contrast(9);
+  mix-blend-mode: multiply;
+}
+
+.loader::before, .loader::after {
+  padding: 6.25em;
+  --stops: #fff calc(1em - 1px), transparent 1em;
+  background: radial-gradient(circle at 1em, var(--stops)), radial-gradient(circle at 50% 1em, var(--stops)), radial-gradient(circle at calc(100% - 1em), var(--stops)), radial-gradient(circle at 50% calc(100% - 1em), var(--stops));
+  -webkit-filter: blur(9px);
+          filter: blur(9px);
+  -webkit-animation: a .875s ease-in-out infinite;
+          animation: a .875s ease-in-out infinite;
+  content: '';
+}
+
+.loader::before {
+  -webkit-animation-name: b;
+          animation-name: b;
+}
+
+@-webkit-keyframes a {
+  33.33%, 66.67% {
+    padding: 1em;
+  }
+}
+
+@keyframes a {
+  33.33%, 66.67% {
+    padding: 1em;
+  }
+}
+
+@-webkit-keyframes b {
+  33.33% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  66.67%, 100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@keyframes b {
+  33.33% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  66.67%, 100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+/*# sourceMappingURL=Loading.css.map */
