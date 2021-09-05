@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import logo from "../../Images/logo1.png";
 import forme from "../../Images/forme.jpg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { loginInitiate } from "../../Redux/Actions";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const signIn = (e) => {
     e.preventDefault();
+    dispatch(loginInitiate(email, password));
+    setEmail("");
+    setPassword("");
   };
+  const history = useHistory();
+  const { user } = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (user) {
+      history.push("/");
+    }
+  }, [user, history]);
   return (
     <>
       <div className="login">

@@ -6,7 +6,19 @@ import logo from "../../Images/logo.png";
 
 import { Link } from "react-router-dom";
 import Search from "@material-ui/icons/Search";
+import { useDispatch, useSelector } from "react-redux";
+import { LogoutInitiate } from "../../Redux/Actions";
 const Header = () => {
+  const { user } = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+  const handleAuthLogout = (resp) => {
+    if (user) {
+      dispatch(LogoutInitiate(resp));
+    }
+  };
+  // useEffect(() => {
+  //  if()
+  // }, [dispatch])
   return (
     <nav className="header">
       <Link to="/">
@@ -27,16 +39,26 @@ const Header = () => {
         <Search className="searchIcon" />
       </div>
       <div className="header-nav">
-        <Link to="/login" className="header-link">
-          <div className="header-option">
-            <span className="header-option1">hello tai</span>
-            <span className="header-option-2">Sign In</span>
+        <Link to={`${user ? "/" : "login"}`} className="header-link">
+          <div className="header-option" onClick={handleAuthLogout}>
+            <span className="header-option1">
+              hello,{user ? user.email : "😞"}
+            </span>
+            <span className="header-option-1">
+              {user ? "Log Out" : "Sign In"}
+            </span>
           </div>
         </Link>
         <Link to="/orders" className="header-link">
           <div className="header-option">
             <span className="header-option1">Returns</span>
             <span className="header-option2">& Orders</span>
+          </div>
+        </Link>
+        <Link to="/login" className="header-link">
+          <div className="header-option">
+            <span className="header-option1">Your</span>
+            <span className="header-option2">Prime</span>
           </div>
         </Link>
         <Link to="/checkout" className="header-link">
