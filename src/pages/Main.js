@@ -8,6 +8,7 @@ import Login from "./Login/Login";
 import Register from "./Register/Register";
 import { auth } from "../utils/firebase";
 import { setUser } from "../Redux/Actions";
+import ForgetPassword from "./ForgetPassword/ForgetPassword";
 const Main = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,6 +33,9 @@ const Main = () => {
           </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/forgot-password">
+            <ForgetPassword />
           </Route>
           <Route exact path="/">
             <Header />

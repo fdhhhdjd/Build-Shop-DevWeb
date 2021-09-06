@@ -1,5 +1,7 @@
 import * as types from "./Actiontypes";
 import { auth } from "../utils/firebase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 //!register
 const registerStart = () => ({
   type: types.REGISTER_START,
@@ -46,18 +48,31 @@ export const RegisterInitiate = (email, password) => {
       .then(({ user }) => {
         dispatch(registerSuccess(user));
       })
-      .catch((error) => dispatch(registerError(error.message)));
+      .catch((error) => {
+        switch (error.code) {
+          case "auth/email-already-in-use":
+            dispatch(registerError(toast.error(error.message)));
+            break;
+          case "auth/invalid-email":
+            dispatch(registerError(toast.error(error.message)));
+            break;
+          case "auth/weak-password":
+            dispatch(registerError(toast.error(error.message)));
+            break;
+        }
+      });
   };
 };
+
 export const loginInitiate = (email, password) => {
   return function (dispatch) {
     dispatch(loginStart());
     auth
       .signInWithEmailAndPassword(email, password)
       .then(({ user }) => {
-        dispatch(loginSuccess(user));
+        dispatch(loginSuccess(user, toast.success("Dang nhap thanh cong ")));
       })
-      .catch((error) => dispatch(loginError(error.message)));
+      .catch((error) => dispatch(loginError(toast.error(error.message))));
   };
 };
 export const LogoutInitiate = () => {
@@ -71,6 +86,7 @@ export const LogoutInitiate = () => {
       .catch((error) => dispatch(logoutError(error.message)));
   };
 };
+
 //tODO:Chỉ ở trang hiện tại khi chưa logout
 export const setUser = (user) => ({
   type: types.SET_USER,

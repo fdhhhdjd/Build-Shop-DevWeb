@@ -16,9 +16,6 @@ const Header = () => {
       dispatch(LogoutInitiate(resp));
     }
   };
-  // useEffect(() => {
-  //  if()
-  // }, [dispatch])
   return (
     <nav className="header">
       <Link to="/">
@@ -29,7 +26,7 @@ const Header = () => {
       </div>
       <div className="header-option">
         <span className="header-option1">xin chao</span>
-        <span className="header-option2">oke</span>
+        <span className="header-option2">Location</span>
       </div>
       <div className="search">
         <select>
@@ -42,7 +39,8 @@ const Header = () => {
         <Link to={`${user ? "/" : "login"}`} className="header-link">
           <div className="header-option" onClick={handleAuthLogout}>
             <span className="header-option1">
-              hello,{user ? user.email : "😞"}
+              {user ? " hello 😄" : "No,go Login "},
+              {user ? user.email.split("@gmail.com") : "😞"}
             </span>
             <span className="header-option-1">
               {user ? "Log Out" : "Sign In"}

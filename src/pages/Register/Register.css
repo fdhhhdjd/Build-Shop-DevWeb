@@ -1,6 +1,6 @@
 .register {
   background-color: white;
-  height: 100vh;
+  height: 88vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,4 +82,6 @@
   font-size: 14px !important;
   color: #0066c0 !important;
 }
-
+#SubmitRegister{
+  background: #f0c14b !important; 
+}

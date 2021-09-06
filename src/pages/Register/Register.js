@@ -4,21 +4,34 @@ import { Link, useHistory } from "react-router-dom";
 import logo from "../../Images/logo1.png";
 import { useDispatch, useSelector } from "react-redux";
 import { RegisterInitiate } from "../../Redux/Actions";
-
-import { auth } from "../../utils/firebase";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
-
+import {
+  Container,
+  CssBaseline,
+  Avatar,
+  Typography,
+  FormControlLabel,
+  Button,
+  Checkbox,
+  makeStyles,
+  Card,
+  CardContent,
+} from "@material-ui/core";
+import forme from "../../Images/forme.jpg";
+import { ToastContainer, toast, style } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Register = (props) => {
+  const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const { user } = useSelector((state) => state.data);
   const history = useHistory();
   useEffect(() => {
@@ -45,6 +58,9 @@ const Register = (props) => {
   };
   const showPasswords = () => {
     setShowPassword(!showPassword);
+  };
+  const showConfirms = () => {
+    setShowConfirm(!showConfirm);
   };
   useEffect(() => {
     ValidatorForm.addValidationRule("isPasswordMatch", (value) => {
@@ -75,6 +91,7 @@ const Register = (props) => {
   return (
     <>
       <div className="register">
+        <ToastContainer />
         <Link to="/">
           <img src={logo} alt="logo" className="register-logo" />
         </Link>
@@ -94,15 +111,7 @@ const Register = (props) => {
               errorMessages={["Bạn cần điện Email vào", "Email không hợp lệ "]}
               autoComplete="off"
             />
-            <InputAdornment className="InputAdornment">
-              <IconButton onClick={showPasswords} className="InputAdornment1">
-                {showPassword ? (
-                  <Visibility className="InputAdornment" />
-                ) : (
-                  <VisibilityOff className="InputAdornment" />
-                )}
-              </IconButton>
-            </InputAdornment>
+
             <br />
             <TextValidator
               variant="outlined"
@@ -118,6 +127,15 @@ const Register = (props) => {
                 "Bạn cần điền mật khẩu vào",
               ]}
               autoComplete="off"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton onClick={showPasswords}>
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
             <br />
             <TextValidator
@@ -126,7 +144,7 @@ const Register = (props) => {
               fullWidth
               onChange={handleConfirmPassowerd}
               name="confirmPassword"
-              type="password"
+              type={showConfirm ? "text" : "password"}
               validators={["isPasswordMatch", "required"]}
               errorMessages={[
                 "Mật khẩu không khớp",
@@ -134,10 +152,25 @@ const Register = (props) => {
               ]}
               value={confirmPassword}
               autoComplete="off"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton onClick={showConfirms}>
+                      {showConfirm ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
-            <button type="submit" className="continue" onClick={SubmitRegister}>
-              Continue
-            </button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              className={classes.submit}
+              id="SubmitRegister"
+            >
+              Sign In
+            </Button>
             <div className="detail">
               <p>Already have a account ?</p>
               <Link to="/login" className="signIn-link ">
@@ -145,10 +178,53 @@ const Register = (props) => {
               </Link>
             </div>
           </ValidatorForm>
+          <p>
+            By continuing, you agree to WebDeb's &nbsp;
+            <Link to="/conditions" className="conditions">
+              <strong>Conditions of Use </strong>
+            </Link>
+            &nbsp; and Privacy Notice.
+          </p>
         </div>
+        <p className="login-footer">
+          <Link to="/conditions">
+            <strong className="login-footers">Conditions of Use</strong>
+          </Link>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Link to="/privacy">
+            <strong className="login-footers">Privacy Notice</strong>
+          </Link>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+          <Link to="/help">
+            <strong className="login-footers">Help</strong>
+          </Link>
+        </p>
+        <p className="name-login">
+          © 2021-2022, ShopWebDev.com, Wellcome for you
+        </p>
+        <a
+          href="https://www.facebook.com/profile.php?id=100006139249437"
+          target="_blank"
+        >
+          <img src={forme} alt="" className="login-logo1" />
+        </a>
       </div>
     </>
   );
 };
+const useStyles = makeStyles((theme) => ({
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+    color: "#fff",
+  },
 
+  pointer: {
+    cursor: "pointer",
+    color: "red",
+  },
+}));
 export default Register;
