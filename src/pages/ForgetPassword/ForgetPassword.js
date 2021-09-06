@@ -11,7 +11,7 @@ import forme from "../../Images/forme.jpg";
 import "./ForgetPassword.css";
 import logo from "../../Images/logo1.png";
 import { ScaleLoader } from "react-spinners";
-import { css } from "glamor";
+
 const ForgetPassword = () => {
   const override = `
   display: block;

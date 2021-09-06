@@ -25,6 +25,7 @@ const basketReducer = (state = initialState, action) => {
     case types.LOGOUT_SUCCESS:
       return {
         ...state,
+        loading: false,
         user: null,
       };
     case types.SET_USER:

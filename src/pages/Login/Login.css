@@ -66,6 +66,7 @@
   color: #111;
   border-color: #a88734 #9c7e31 #846a29;
   cursor: pointer;
+  
 }
 
 .login-register {
@@ -130,7 +131,6 @@ font-size: 11px !important;
 .login-signIn1{
   background: white !important;
   border: 1px solid black !important;
- 
-     
+
 }
 

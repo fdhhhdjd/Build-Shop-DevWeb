@@ -26,17 +26,18 @@ import {
 } from "@material-ui/core";
 import { ScaleLoader } from "react-spinners";
 import { auth, googleAuthProvider } from "../../utils/firebase";
+
 const Login = () => {
   const override = `
   display: block;
-  margin-left: 100px;
+  margin-left: 150px;
   border-color: red;
 `;
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loadings, setLoading] = useState(false);
   const [rememberme, setRememberMe] = useState(false);
   const signIns = async (e) => {
     e.preventDefault();
@@ -49,24 +50,24 @@ const Login = () => {
     // if (password.length < 6) {
     //   toast.error("");
     // }
-    try {
-      const result = await auth.signInWithEmailLink(
-        email,
-        window.location.href
-      );
-      if (result.user.sendEmailVerification) {
-        //! remove user email  fom token local store
-        window.localStorage.removeItem("EmailForRegister");
-        //!get user token local store
-        let user = auth.currentUser;
-        await user.updatePassword();
-        const idToken = await user.getIdTokenResult();
-        console.log("user", user, "idToken", idToken);
-        history.push("/");
-      }
-    } catch (error) {
-      toast.error(error.message);
-    }
+    // try {
+    //   const result = await auth.signInWithEmailLink(
+    //     email,
+    //     window.location.href
+    //   );
+    //   if (result.user.sendEmailVerification) {
+    //     //! remove user email  fom token local store
+    //     window.localStorage.removeItem("EmailForRegister");
+    //     //!get user token local store
+    //     let user = auth.currentUser;
+    //     await user.updatePassword();
+    //     const idToken = await user.getIdTokenResult();
+    //     console.log("user", user, "idToken", idToken);
+    //     history.push("/");
+    //   }
+    // } catch (error) {
+    //   toast.error(error.message);
+    // }
   };
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -93,6 +94,7 @@ const Login = () => {
   };
   const history = useHistory();
   const { user } = useSelector((state) => state.data);
+  const { loading } = useSelector((state) => state.data);
   const dispatch = useDispatch();
   useEffect(() => {
     if (user) {

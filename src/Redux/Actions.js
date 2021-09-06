@@ -2,6 +2,7 @@ import * as types from "./Actiontypes";
 import { auth } from "../utils/firebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 //!register
 const registerStart = () => ({
   type: types.REGISTER_START,
@@ -15,6 +16,7 @@ const registerError = (error) => ({
   payload: error,
 });
 //!login
+
 const loginStart = () => ({
   type: types.LOGIN_START,
 });
@@ -72,7 +74,9 @@ export const loginInitiate = (email, password) => {
       .then(({ user }) => {
         dispatch(loginSuccess(user, toast.success("Dang nhap thanh cong ")));
       })
-      .catch((error) => dispatch(loginError(toast.error(error.message))));
+      .catch((error) => {
+        dispatch(loginError(toast.error(error.message)));
+      });
   };
 };
 export const LogoutInitiate = () => {
