@@ -1,0 +1,242 @@
+/* PC */
+@media (min-width: 1367px) {
+}
+
+/* Tablet Low */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+    .demos-header {
+        padding-top: 100px;
+    }
+
+    .project-heading{
+        font-size: 60px;
+    }
+
+    .about-header{
+        font-size: 60px;
+    }
+
+    .about-counter-number{
+        font-size: 100px;
+    }
+
+    .demos-header {
+        font-size: 60px;
+    }
+
+    .benefits-header {
+        font-size: 60px;
+    }
+
+    .method-header {
+        font-size: 60px;
+    }
+
+    .purchase-heading{
+        font-size: 40px;
+    }
+
+    .box {
+        width: 292px;
+    }
+
+    #demos{
+        height: 150vh;
+    }
+
+    .demos-wrapper{
+        height: 240px;
+    }
+
+    .demos-img{
+        height: 240px
+    }
+
+    #benefits {
+        height: 150vh;
+        padding-top: 150px;
+    }
+
+    #method{
+        height: 120vh;
+        padding-top: 100px;
+    }
+
+    .method-content{
+        padding: 40px 0;
+    }
+
+    .method-heading {
+        margin-bottom: 0;
+    }
+
+    .navbar-menu a{
+        margin: 0 8px;
+    }
+
+    .demos-brand{
+        top: 50px;
+    }
+}
+
+/* Tablet High */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .projects-content{
+        height: 100vh;
+    }
+
+    .box {
+        width: 289px;
+    }
+    
+    
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .cs-hidden{
+        height: 300px;
+    }
+
+    .project-heading{
+        font-size: 40px;
+    }
+
+    .box {
+        height: 100%;
+        width: 354px;
+    }
+
+    .model{
+        width: 354px;
+        height: 370px;
+    }
+
+    .lSNext::before{
+        margin-top: 2px !important;
+    }
+    .lSPrev::before{
+        margin-top: 2px !important;
+    }
+
+    .lSAction > a{
+        opacity: 1 !important;
+    }
+
+    .demos-heading-space {
+        padding-top: 200px;
+    }
+
+    #about{
+        height: 200vh;
+    }
+
+    .about-heading {
+        padding-top: 100px;
+    }
+
+    #demos {
+        height:375vh;
+    }
+
+    .demos-header-space {
+        margin-top: 50px;
+    }
+
+    .benefits-header{
+        font-size: 40px;
+        padding-top: 20px;
+    }
+
+    #benefits{
+        height: 160vh;
+    }
+
+    #method{
+        height: 150vh;
+    }
+
+    .method-heading{
+        margin-bottom: 50px;
+    }
+
+    .method-header{
+        font-size: 40px;
+    }
+
+    .method-content{
+        padding: 20px 0;
+    }
+
+    .method-caption{
+        margin-left: 0;
+    }
+
+    .method-number{
+        font-size: 120px;
+    }
+
+    #purchase {
+        height: 100vh;
+    }
+
+    .purchase-heading {
+        font-size: 40px;
+    }
+
+    .purchase-content{
+        top: 10%;
+    }
+    
+    .goTop{
+        right: 10px;
+        bottom: 20px;
+    }
+
+    .navbar-wrapper {
+        margin: 0 20px;
+    }
+
+    .navbar-menu{
+        position: absolute;
+        right:0;
+        height: 50vh;
+        width: 100%;
+        top: 11.3vh;
+        background:#fff;
+        display: flex;
+        box-shadow: 0px 20px 20px rgb(0 0 0 / 15%);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateY(-500px);
+    }
+
+    .navbar-active {
+        transform: translateY(0%);
+        transition: transform 0.5s ease-in-out;
+
+    }
+
+    .navbar-menu a{
+        color: #000;
+        font-size: 1.5rem;
+    }
+    
+    .navbar-icon{
+        display: block;
+    }
+
+    .benefits-content{
+        margin: 0 5px;
+    }
+    .purchase-bg {
+        height: 50vh;
+    }
+
+    .demos-links{
+        left: 128px;
+        padding-top: 2px;
+    }
+}

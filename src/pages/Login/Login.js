@@ -86,7 +86,7 @@ const Login = () => {
     auth
       .signInWithPopup(googleAuthProvider)
       .then(async () => {
-        dispatch(loginInitiate(email, password));
+        dispatch(loginInitiate(user));
       })
       .catch((error) => {
         toast.error(error.message);

@@ -22,10 +22,10 @@ const Footer = () => {
               <strong className="phone">+0798805741</strong>
             </span>
 
-            <span>
+            {/* <span>
               <i className="fas fa-envelope" />
               Email: nguyentientai10@gmail.com
-            </span>
+            </span> */}
             <br />
           </div>
           <div className="socials">

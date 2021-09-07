@@ -31,7 +31,7 @@
     margin-bottom: 8px;
   
   }
-  
+ 
   .footer .footer-content .about .socials a {
     border: 1px solid gray;
     width: 45px;
@@ -43,6 +43,7 @@
     font-size: 1.3em;
     border-radius: 5px;
     transition: all .3s;
+  
   }
   
   .footer .footer-content .about .socials a:hover {
@@ -57,6 +58,7 @@
     margin-bottom: 10px;
     font-size: 1.2em;
     transition: all .3s;
+  
   }
   
   .footer .footer-content .links ul a:hover {
@@ -94,7 +96,9 @@
     position: absolute;
     bottom: 0px;
     left: 0px;
-    padding-top: 20px;
+    padding-top: 30px;
+    
+  
   }
   .socials .fa-facebook:hover{
     color: #4267B2
@@ -154,4 +158,8 @@
     .footer .footer-content .contact-form .contact-btn {
       width: 100%;
     }
+    .footer-bottom{
+      height: 20px;
+    }
   }
+ 
