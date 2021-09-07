@@ -47,11 +47,10 @@
     position: relative;
 
 }
-/* .logo-text{
-    position: absolute;
-    height:100px;
-    width: 100px;
-} */
+#image-error{
+    background-image: cover !important;
+ 
+}
 .about-title:before{
     content: "";
     position: absolute;
@@ -420,13 +419,16 @@
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
-    text-decoration: none;
+    text-decoration: none !important;
     letter-spacing: 0.10em;
     color: #db0018;
     background: none;
     padding: 9px 40px 0 40px;
     margin-top: 10px;
     border-radius: 0;
+}
+.purchase-link :hover{
+    text-decoration: none!important;
 }
 
 .purchase-link::before{

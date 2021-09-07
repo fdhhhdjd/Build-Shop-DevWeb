@@ -1,13 +1,15 @@
 .body {
-    background-color: #95c2de;
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+
   }
   
   .mainbox {
-    background-color: #95c2de;
+
     margin: auto;
     height: 600px;
     width: 600px;
     position: relative;
+    color: black ;
   }
   
     .err {
@@ -17,6 +19,7 @@
       position:absolute;
       left: 20%;
       top: 8%;
+      color: black ;
     }
   
   .far {
@@ -24,7 +27,7 @@
     font-size: 8.5rem;
     left: 42%;
     top: 15%;
-    color: #ffffff;
+    color: black ;
   }
   
    .err2 {
@@ -34,6 +37,7 @@
       position:absolute;
       left: 68%;
       top: 8%;
+      color: black ;
     }
   
   .msg {
@@ -55,7 +59,7 @@
     text-decoration: underline;
   }
   .go-back{
-    text-decoration: none;
+    text-decoration: none;  color: black ;
   }
 .go-back:hover{
   text-decoration: none;

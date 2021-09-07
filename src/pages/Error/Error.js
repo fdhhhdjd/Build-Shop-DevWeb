@@ -12,9 +12,9 @@ const Error = () => {
           <div className="msg">
             Page Not Found 😥
             <p>
-              Let's go
+              Let's go &nbsp;
               <Link to="/" className="go-back">
-                Go back 🔙
+                Go back &nbsp;🔙
               </Link>
             </p>
           </div>
