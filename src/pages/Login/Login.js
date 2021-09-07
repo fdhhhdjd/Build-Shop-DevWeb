@@ -224,8 +224,8 @@ const Login = () => {
             <strong className="login-footers">Conditions of Use</strong>
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Link to="/privacy">
-            <strong className="login-footers">Privacy Notice</strong>
+          <Link to="/team-word">
+            <strong className="login-footers">TeamWord</strong>
           </Link>
           &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
           <Link to="/help">

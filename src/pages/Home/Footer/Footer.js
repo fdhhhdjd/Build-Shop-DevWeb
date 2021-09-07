@@ -94,7 +94,7 @@ const Footer = () => {
               <a href="https://twitter.com/tientai_heo" target="_blank">
                 <li>Twitter</li>
               </a>
-              <a href="mailto:info@yoursite.com">
+              <a href="mailto:nguyentientai10@gmail.com">
                 <li>Email</li>
               </a>
               <a href="tel://0798805741">

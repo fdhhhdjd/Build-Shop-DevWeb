@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase";
 import { setUser } from "../Redux/Actions";
 import ForgetPassword from "./ForgetPassword/ForgetPassword";
 import Help from "./HelpCustomer/Help";
+import TeamWord from "./TeamWord/TeamWord";
 const Main = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -37,6 +38,10 @@ const Main = () => {
           </Route>
           <Route exact path="/forgot-password">
             <ForgetPassword />
+          </Route>
+          <Route exact path="/team-word">
+            <Header />
+            <TeamWord />
           </Route>
           <Route exact path="/help">
             <Header />
