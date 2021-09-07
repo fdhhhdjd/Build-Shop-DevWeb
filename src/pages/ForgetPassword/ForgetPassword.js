@@ -25,7 +25,7 @@ const ForgetPassword = () => {
     e.preventDefault();
     setLoading(true);
     const config = {
-      url: "http://localhost:3000/login",
+      url: "https://showdevweb.herokuapp.com/login",
       handleCodeInApp: true,
     };
 
