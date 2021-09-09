@@ -2,7 +2,7 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Header from "../components/Header/Header";
-import Error from "./Error/Error";
+// import Error from "./Error/Error";
 import { auth } from "../utils/firebase";
 import { setUser } from "../Redux/Actions";
 import { loadStripe } from "@stripe/stripe-js";
@@ -59,6 +59,7 @@ const Help = lazy(() => {
     setTimeout(() => resolve(import("./HelpCustomer/Help")), 800);
   });
 });
+const Error = lazy(() => import("./Error/Error"));
 const promise = loadStripe(
   "pk_test_51JXQenIBbq837XS88GNqnCjmCQ1s6JO1Dahwp43mCdZyev4l4465VtkrQhdc1JQJLyMm4ylC3mXVgADX0zM396hq00PnaQqeBv"
 );
@@ -80,8 +81,8 @@ const Main = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <Switch>
-          <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading />}>
+          <Switch>
             <Route exact path="/register">
               <Register toggle={() => formMode()} />
             </Route>
@@ -95,17 +96,14 @@ const Main = () => {
               <Header />
               <TeamWord />
             </Route>
-
             <Route exact path="/help">
               <Header />
               <Help />
             </Route>
-
             <Route exact path="/">
               <Header />
               <Home />
             </Route>
-
             <Route exact path="/product/:id">
               <Header />
               <SingleProduct />
@@ -124,9 +122,9 @@ const Main = () => {
               <Header />
               <Orders />
             </Route>
-          </Suspense>
-          <Route path="*" component={Error} />
-        </Switch>
+            <Route exact path="*" component={Error} />
+          </Switch>
+        </Suspense>
       </div>
     </BrowserRouter>
   );
