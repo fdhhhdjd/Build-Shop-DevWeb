@@ -1,4 +1,4 @@
-body {
+.body1 {
   display: -ms-grid;
   display: grid;
   overflow: hidden;
@@ -7,13 +7,13 @@ body {
   background: #000;
 }
 
-body::before {
+.body1::before {
   padding: 7.25em;
   background: radial-gradient(#e56589 3.25em, #6c97c3 4.25em);
   content: '';
 }
 
-body::after {
+.body1::after {
   position: absolute;
   top: calc(50% + 6.25em);
   left: 50%;

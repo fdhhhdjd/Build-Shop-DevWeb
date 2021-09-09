@@ -8,6 +8,27 @@ const initialState = {
 const basketReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
+    case types.ADD_TO_BASKET:
+      const newBasket = [...state.basket, action.payload];
+      return { ...state, basket: newBasket };
+
+    case types.REMOVE_FROM_BASKET:
+      const newBaskets = [...state.basket];
+      const index = state.basket.findIndex(
+        (item) => item.id === action.payload
+      );
+      if (index >= 0) {
+        newBaskets.splice(index, 1);
+      }
+      return {
+        ...state,
+        basket: newBaskets,
+      };
+    case types.SET_BASKET_EMPTY:
+      return {
+        ...state,
+        basket: [],
+      };
     case types.REGISTER_START:
     case types.LOGIN_START:
     case types.LOGOUT_START:
@@ -41,6 +62,7 @@ const basketReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
+
     default:
       return state;
   }

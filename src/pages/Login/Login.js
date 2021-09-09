@@ -26,7 +26,7 @@ import {
 } from "@material-ui/core";
 import { ScaleLoader } from "react-spinners";
 import { auth, googleAuthProvider } from "../../utils/firebase";
-
+import Loading from "../../components/Loading/Loading";
 const Login = () => {
   const override = `
   display: block;
@@ -87,6 +87,7 @@ const Login = () => {
       .signInWithPopup(googleAuthProvider)
       .then(async () => {
         dispatch(loginInitiate(user));
+        setLoading(true);
       })
       .catch((error) => {
         toast.error(error.message);
@@ -102,6 +103,12 @@ const Login = () => {
       history.push("/");
     }
   }, [user, history]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
   //!localStorage Forget Auto login
   useEffect(() => {
     setEmail(window.localStorage.getItem("EmailForRegister"));
@@ -189,21 +196,25 @@ const Login = () => {
             )}
           </ValidatorForm>
           <br />
+          {loadings ? (
+            <Loading />
+          ) : (
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              className="login-signIn1"
+              onClick={loginGoogle}
+            >
+              <img
+                className="firebaseui-idp-icon"
+                alt=""
+                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+              />
+              Login Google
+            </Button>
+          )}
 
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            className="login-signIn1"
-            onClick={loginGoogle}
-          >
-            <img
-              className="firebaseui-idp-icon"
-              alt=""
-              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-            />
-            Login Google
-          </Button>
           <p>
             By continuing, you agree to WebDeb's &nbsp;
             <Link to="/conditions" className="conditions">

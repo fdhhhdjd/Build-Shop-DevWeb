@@ -9,7 +9,7 @@ import Search from "@material-ui/icons/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { LogoutInitiate } from "../../Redux/Actions";
 const Header = () => {
-  const { user } = useSelector((state) => state.data);
+  const { user, basket } = useSelector((state) => state.data);
   const dispatch = useDispatch();
   const handleAuthLogout = (resp) => {
     if (user) {
@@ -59,10 +59,16 @@ const Header = () => {
             <span className="header-option2">Prime</span>
           </div>
         </Link>
-        <Link to="/checkout" className="header-link">
+        <Link
+          // to={`${user ? "/checkout" : "/login"}`}
+          to="/checkout"
+          className="header-link"
+        >
           <div className="header-basket">
             <ShoppingCartOutlinedIcon />
-            <span className="header-option2 basket-count ">0</span>
+            <span className="header-option2 basket-count ">
+              {basket && basket.length}
+            </span>
           </div>
         </Link>
       </div>

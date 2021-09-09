@@ -28,6 +28,7 @@ const Home = () => {
             {products.slice(0, 2).map((item) => (
               <Product
                 key={item.id}
+                id={item.id}
                 title={item.title}
                 price={item.price}
                 rating={item.rating}
@@ -41,6 +42,7 @@ const Home = () => {
             {products.slice(2, 5).map((item) => (
               <Product
                 key={item.id}
+                id={item.id}
                 title={item.title}
                 price={item.price}
                 rating={item.rating}
@@ -54,6 +56,7 @@ const Home = () => {
             {products.slice(5, 7).map((item) => (
               <Product
                 key={item.id}
+                id={item.id}
                 title={item.title}
                 price={item.price}
                 rating={item.rating}

@@ -3,6 +3,15 @@ import { auth } from "../utils/firebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+
+export const addToBasket = (item) => ({
+  type: types.ADD_TO_BASKET,
+  payload: item,
+});
+export const removeFromBasket = (id) => ({
+  type: types.REMOVE_FROM_BASKET,
+  payload: id,
+});
 //!register
 const registerStart = () => ({
   type: types.REGISTER_START,
@@ -95,4 +104,8 @@ export const LogoutInitiate = () => {
 export const setUser = (user) => ({
   type: types.SET_USER,
   payload: user,
+});
+//todo: SetBasket-Empty
+export const setBasketEmpty = (basket) => ({
+  type: types.SET_BASKET_EMPTY,
 });

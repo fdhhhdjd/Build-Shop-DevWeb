@@ -11,7 +11,7 @@ import BackToTop from "../../components/BackToTop/BackToTop";
 import { Link } from "react-router-dom";
 const TeamWord = () => {
   return (
-    <div className="body1">
+    <div className="body11">
       <section id="hero">
         <div className="hero container11">
           <div>

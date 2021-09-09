@@ -14,14 +14,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseGet = firebase.initializeApp(firebaseConfig);
 const firebaseDb = firebase.database().ref();
-const db = firebase.storage();
+const db = firebaseGet.firestore();
 const auth = firebase.auth();
-const projectFirestore = firebase.firestore();
+// const projectFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export {
   auth,
-  projectFirestore,
+  // projectFirestore,
   timestamp,
   firebaseDb,
   firebaseGet,
