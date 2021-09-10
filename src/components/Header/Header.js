@@ -3,7 +3,6 @@ import "./Header.css";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import logo from "../../Images/logo.png";
-
 import { Link } from "react-router-dom";
 import Search from "@material-ui/icons/Search";
 import { useDispatch, useSelector } from "react-redux";

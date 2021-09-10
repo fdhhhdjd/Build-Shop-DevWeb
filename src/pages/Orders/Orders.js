@@ -26,7 +26,7 @@ const Orders = () => {
   }, [user]);
   return (
     <div className="orders">
-      <h1>Your Order</h1>
+      <h1>{user ? "Bạn thanh toán thành công 🥰" : ""}</h1>
       <div className="orders-order">
         {orders &&
           orders.map((order, index) => <Order order={order} key={index} />)}

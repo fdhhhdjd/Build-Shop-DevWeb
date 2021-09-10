@@ -67,6 +67,48 @@ const Home = () => {
               />
             ))}
           </div>
+          <div className="home-row">
+            {products.slice(7, 10).map((item) => (
+              <Product
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                rating={item.rating}
+                image={item.image}
+                specification={item.specification}
+                detail={item.detail}
+              />
+            ))}
+          </div>
+          <div className="home-row">
+            {products.slice(10, 12).map((item) => (
+              <Product
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                rating={item.rating}
+                image={item.image}
+                specification={item.specification}
+                detail={item.detail}
+              />
+            ))}
+          </div>
+          <div className="home-row">
+            {products.slice(12, 15).map((item) => (
+              <Product
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                rating={item.rating}
+                image={item.image}
+                specification={item.specification}
+                detail={item.detail}
+              />
+            ))}
+          </div>
           <div>
             <BackToTop />
           </div>

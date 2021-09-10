@@ -92,7 +92,7 @@ const products = [
       "https://images-na.ssl-images-amazon.com/images/I/712Brp0hwfL._UL1500_.jpg",
   },
   {
-    id: "1234",
+    id: "6",
     title:
       "LG 27 inch 4K-UHD (3840 x 2160) HDR 10 Monitor (Gaming & Design) with IPS Panel",
     price: 11,
@@ -110,6 +110,158 @@ const products = [
       "LG IPS display has extraordinary color accuracy, covering 98% of the sRGB color spectrum. It also has a wider viewing angle, so it's even easier to enjoy true color visuals. Radeon FreeSync reduces the tearing and stuttering that occur between a graphic card's frame rate and a monitor's refresh rate enabling smoother motion and less stuttering in demanding games.",
     image:
       "https://images-na.ssl-images-amazon.com/images/I/61pI7loWpZS._SL1339_.jpg",
+  },
+  {
+    id: "7",
+    title:
+      "Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox - 1-Year Rescue Service (STGX2000400)",
+    price: 18,
+    rating: 4,
+    specification: [
+      "Easily store and access 2TB to content on the go with the Seagate Portable Drive, a USB external hard drive",
+      "Designed to work with Windows or Mac computers, this external hard drive makes backup a snap just drag and drop",
+      "To get set up, connect the portable hard drive to a computer for automatic recognition no software required",
+      "Radeon Freesync - Gaming Features - DAS Mode and Black Stablizer",
+      "This USB drive provides plug and play simplicity with the included 18 inch USB 3.0 cable",
+    ],
+    detail:
+      "Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox - 1-Year Resc",
+    image: "https://images-na.ssl-images-amazon.com/images/I/31jBba7+ySL.jpg",
+  },
+  {
+    id: "8",
+    title:
+      "Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox - 1-Year Rescue Service (STGX2000400)",
+    price: 18,
+    rating: 4,
+    specification: [
+      "Easily store and access 2TB to content on the go with the Seagate Portable Drive, a USB external hard drive",
+      "Designed to work with Windows or Mac computers, this external hard drive makes backup a snap just drag and drop",
+      "To get set up, connect the portable hard drive to a computer for automatic recognition no software required",
+      "Radeon Freesync - Gaming Features - DAS Mode and Black Stablizer",
+      "This USB drive provides plug and play simplicity with the included 18 inch USB 3.0 cable",
+    ],
+    detail:
+      "Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox - 1-Year Resc",
+    image: "https://images-na.ssl-images-amazon.com/images/I/31jBba7+ySL.jpg",
+  },
+  {
+    id: "9",
+    title: "Razer Kishi Mobile Game Controller  MFi Certified",
+    price: 2,
+    rating: 5,
+    specification: [
+      "Universal Mobile Gaming Controller: Designed to bring console-level control to your phone for gaming anywhere",
+      "Cloud and Mobile Gaming: Compatible with leading cloud gaming services including Xbox Game Pass Ultimate, Stadia, Amazon Luna, GeForce NOW, & Steam Link; & hundreds of popular mobile games including Call of Duty Mobile (iPhone only), Fortnite, Minecraft, Genshin Impact, Brawlhalla, Asphalt 9: Legends, emulators, & many more",
+      "Refine Your Aim and Execution: Clickable analog thumbsticks provide greater accuracy and tactile feedback, and the performance buttons and d-pad deliver precision input",
+      "Latency-Free Gameplay: Unlike Bluetooth controllers which produce lag, the controller has zero latency by directly connecting to the device’s charging port",
+      "Ergonomic, Flexible Design for a Comfortable Handheld Grip: Designed for long gaming sessions, the controller feels great to hold and can be stretched and clamped on most iPhones with a Lighting port, providing a secure hold that won’t come loose during gaming",
+    ],
+    detail:
+      "6 GB DDR4 2933MHz Dual-Channel Memory, 512GB NVMe SSD (2 x M.2 slots; 1 slot open for easy upgrades) & 1 - Available Hard Drive Bay",
+    image:
+      "https://m.media-amazon.com/images/I/71T4e3ubwAL._AC_UL480_FMwebp_QL65_.jpg",
+  },
+  {
+    id: "10",
+    title:
+      "Acer Predator Helios 300 Gaming Laptop, Intel i7-10750H, NVIDIA GeForce RTX 2060 6GB, 15.6 Full HD 144Hz 3ms IPS Display, 16GB Dual-Channel DDR4",
+    price: 5,
+    rating: 5,
+    specification: [
+      "10th Generation Intel Core i7-10750H 6-Core Processor (Up to 5.0 GHz) with Windows 10 Home 64 Bit",
+      "Overclockable NVIDIA GeForce RTX 2060 with 6 GB of dedicated GDDR6 VRAM",
+      "Don’t just play the game—live it Acer’s Predator Galea 310 delivers epic, mind-blowing sound and tournament-grade clarity",
+      "True Harmony Technology & Real Sound",
+    ],
+    detail:
+      "10th Generation Intel Core i7-10750H 6-Core Processor (Up to 5.0 GHz) with Windows 10 Home 64 Bit",
+    image: "https://images-na.ssl-images-amazon.com/images/I/41k21rsIfzS.jpg",
+  },
+  {
+    id: "11",
+    title:
+      "Sceptre 201600x900 75Hz Ultra Thin LED Monitor 2x HDMI VGA Built-in Speakers, Machine Black Wide ",
+    price: 18,
+    rating: 4,
+    specification: [
+      "Universal Mobile Gaming Controller: Designed to bring console-level control to your phone for gaming anywhere",
+      "Cloud and Mobile Gaming: Compatible with leading cloud gaming services including Xbox Game Pass Ultimate, Stadia, Amazon Luna, GeForce NOW, & Steam Link; & hundreds of popular mobile games including Call of Duty Mobile (iPhone only), Fortnite, Minecraft, Genshin Impact, Brawlhalla, Asphalt 9: Legends, emulators, & many more",
+      "Refine Your Aim and Execution: Clickable analog thumbsticks provide greater accuracy and tactile feedback, and the performance buttons and d-pad deliver precision input",
+      "Latency-Free Gameplay: Unlike Bluetooth controllers which produce lag, the controller has zero latency by directly connecting to the device’s charging port",
+      "Ergonomic, Flexible Design for a Comfortable Handheld Grip: Designed for long gaming sessions, the controller feels great to hold and can be stretched and clamped on most iPhones with a Lighting port, providing a secure hold that won’t come loose during gaming",
+    ],
+    detail:
+      "Brilliant 4K picture quality: Stream in HD, 4K, and HDR with sharp resolution and vivid color optimized for your TV",
+    image: "https://images-na.ssl-images-amazon.com/images/I/41UW0nzowBS.jpg",
+  },
+  {
+    id: "12",
+    title:
+      "SAMSUNG: EVO Select 128GB MicroSDXC UHS-I U3 100MB/s Full HD & 4K UHD Memory Card with Adapter (MB-ME128HA)",
+    price: 18,
+    rating: 4,
+    specification: [
+      "Universal Mobile Gaming Controller: Designed to bring console-level control to your phone for gaming anywhere",
+      "Cloud and Mobile Gaming: Compatible with leading cloud gaming services including Xbox Game Pass Ultimate, Stadia, Amazon Luna, GeForce NOW, & Steam Link; & hundreds of popular mobile games including Call of Duty Mobile (iPhone only), Fortnite, Minecraft, Genshin Impact, Brawlhalla, Asphalt 9: Legends, emulators, & many more",
+      "Refine Your Aim and Execution: Clickable analog thumbsticks provide greater accuracy and tactile feedback, and the performance buttons and d-pad deliver precision input",
+      "Latency-Free Gameplay: Unlike Bluetooth controllers which produce lag, the controller has zero latency by directly connecting to the device’s charging port",
+      "Ergonomic, Flexible Design for a Comfortable Handheld Grip: Designed for long gaming sessions, the controller feels great to hold and can be stretched and clamped on most iPhones with a Lighting port, providing a secure hold that won’t come loose during gaming",
+    ],
+    detail:
+      "Convenient voice control: Use your voice to quickly search across channels, turn captions on, and more in a touch",
+    image: "https://images-na.ssl-images-amazon.com/images/I/31HtmS2FyVL.jpg",
+  },
+  {
+    id: "13",
+    title:
+      " Noise-Cancelling Microphone, USB, In-Line Controls, PC/Mac/Laptop - Black",
+    price: 18,
+    rating: 2,
+    specification: [
+      "Universal Mobile Gaming Controller: Designed to bring console-level control to your phone for gaming anywhere",
+      "Cloud and Mobile Gaming: Compatible with leading cloud gaming services including Xbox Game Pass Ultimate, Stadia, Amazon Luna, GeForce NOW, & Steam Link; & hundreds of popular mobile games including Call of Duty Mobile (iPhone only), Fortnite, Minecraft, Genshin Impact, Brawlhalla, Asphalt 9: Legends, emulators, & many more",
+      "Refine Your Aim and Execution: Clickable analog thumbsticks provide greater accuracy and tactile feedback, and the performance buttons and d-pad deliver precision input",
+      "Latency-Free Gameplay: Unlike Bluetooth controllers which produce lag, the controller has zero latency by directly connecting to the device’s charging port",
+      "Ergonomic, Flexible Design for a Comfortable Handheld Grip: Designed for long gaming sessions, the controller feels great to hold and can be stretched and clamped on most iPhones with a Lighting port, providing a secure hold that won’t come loose during gaming",
+    ],
+    detail:
+      "Upgrade to Roku streaming: All of your favorite channels, like HBO Max, Netflix, YouTube, and Prime Video, are front and center on the customizable home screen, plus your device is always getting better with automatic updates",
+    image: "https://images-na.ssl-images-amazon.com/images/I/31DUeeauN-L.jpg",
+  },
+  {
+    id: "14",
+    title:
+      "Roku Express 4K+ 2021 | Streaming Media Player HD/4K/HDR with Smooth Wireless Streaming and Roku Voice Remote with TV Controls,",
+    price: 18,
+    rating: 3,
+    specification: [
+      "Universal Mobile Gaming Controller: Designed to bring console-level control to your phone for gaming anywhere",
+      "Cloud and Mobile Gaming: Compatible with leading cloud gaming services including Xbox Game Pass Ultimate, Stadia, Amazon Luna, GeForce NOW, & Steam Link; & hundreds of popular mobile games including Call of Duty Mobile (iPhone only), Fortnite, Minecraft, Genshin Impact, Brawlhalla, Asphalt 9: Legends, emulators, & many more",
+      "Refine Your Aim and Execution: Clickable analog thumbsticks provide greater accuracy and tactile feedback, and the performance buttons and d-pad deliver precision input",
+      "Latency-Free Gameplay: Unlike Bluetooth controllers which produce lag, the controller has zero latency by directly connecting to the device’s charging port",
+      "Ergonomic, Flexible Design for a Comfortable Handheld Grip: Designed for long gaming sessions, the controller feels great to hold and can be stretched and clamped on most iPhones with a Lighting port, providing a secure hold that won’t come loose during gaming",
+    ],
+    detail:
+      "Save money, stream big: Watch what you love, including a massive selection of free and live TV, including 150+ Live TV channels free on The Roku Channel—it’s great for streaming TV and cutting cable",
+    image: "https://images-na.ssl-images-amazon.com/images/I/41pTwQmGvGL.jpg",
+  },
+  {
+    id: "15",
+    title:
+      "Roku Streaming Stick+ | HD/4K/HDR Streaming Device with Long-range Wireless and Roku Voice Remote with TV Controls",
+    price: 18,
+    rating: 5,
+    specification: [
+      "Universal Mobile Gaming Controller: Designed to bring console-level control to your phone for gaming anywhere",
+      "Cloud and Mobile Gaming: Compatible with leading cloud gaming services including Xbox Game Pass Ultimate, Stadia, Amazon Luna, GeForce NOW, & Steam Link; & hundreds of popular mobile games including Call of Duty Mobile (iPhone only), Fortnite, Minecraft, Genshin Impact, Brawlhalla, Asphalt 9: Legends, emulators, & many more",
+      "Refine Your Aim and Execution: Clickable analog thumbsticks provide greater accuracy and tactile feedback, and the performance buttons and d-pad deliver precision input",
+      "Latency-Free Gameplay: Unlike Bluetooth controllers which produce lag, the controller has zero latency by directly connecting to the device’s charging port",
+      "Ergonomic, Flexible Design for a Comfortable Handheld Grip: Designed for long gaming sessions, the controller feels great to hold and can be stretched and clamped on most iPhones with a Lighting port, providing a secure hold that won’t come loose during gaming",
+    ],
+    detail:
+      "Power up your TV, adjust the volume, mute, and control your Roku device all with one remote",
+    image: "https://images-na.ssl-images-amazon.com/images/I/41pigC7Lq0L.jpg",
   },
 ];
 
