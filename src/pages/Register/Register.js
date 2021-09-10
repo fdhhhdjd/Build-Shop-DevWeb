@@ -169,7 +169,7 @@ const Register = (props) => {
               className={classes.submit}
               id="SubmitRegister"
             >
-              Sign In
+              Sign Up
             </Button>
             <div className="detail">
               <p>Already have a account ?</p>
