@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./SingleProduct.css";
 import { useParams } from "react-router-dom";
 import { products } from "../../utils/ProductsData";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../Redux/Actions";
+import { ThemeContext } from "../../UseContext/ChangeTheme/ChangeTheme";
+import ThemeColor from "../../components/ChangeTheme/ThemeColor";
 const SingleProduct = () => {
   let { id } = useParams();
   let singleProduct = products.find((item) => item.id === id);
@@ -21,8 +23,11 @@ const SingleProduct = () => {
     };
     dispatch(addToBasket(item));
   };
+  const { theme } = useContext(ThemeContext);
+  const { light, dark, common, isFlag } = theme;
+  const themeStyle = { ...(isFlag ? dark : light), ...common };
   return (
-    <div className="single-product-container">
+    <div className="single-product-container" style={themeStyle}>
       <img
         src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
         alt=""
@@ -65,6 +70,7 @@ const SingleProduct = () => {
             </button>
           </div>
         </div>
+        <ThemeColor />
       </div>
     </div>
   );

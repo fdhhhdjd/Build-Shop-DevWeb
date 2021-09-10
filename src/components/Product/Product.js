@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Product.css";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../Redux/Actions";
+import { ThemeContext } from "../../UseContext/ChangeTheme/ChangeTheme";
 const Product = ({
   id,
   title,
@@ -18,7 +19,14 @@ const Product = ({
     const item = { id, title, image, price, rating, specification, detail };
     dispatch(addToBasket(item));
   };
-
+  // const [{ theme }] = useContext(ThemeContext);
+  // const themeStyle = {
+  //   ...{
+  //     backgroundColor: theme.backgroundColor,
+  //     color: theme.color,
+  //     transition: theme.common,
+  //   },
+  // };
   return (
     <div className="product">
       <div className="info">

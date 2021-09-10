@@ -50,3 +50,11 @@
 i {
   vertical-align: middle;
 }
+.theme-dark{
+  background-color:black;
+  color: white !important;
+}
+.theme-light{
+  background-color:white;
+  color: black !important;
+}

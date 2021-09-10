@@ -11,6 +11,7 @@ import Banner5 from "../../BannerImages/Banner5.jpg";
 import Banner6 from "../../BannerImages/Banner6.jpg";
 import BackToTop from "../../components/BackToTop/BackToTop";
 import Footer from "./Footer/Footer";
+import ThemeColor from "../../components/ChangeTheme/ThemeColor";
 const Home = () => {
   const bannerImages = [Banner1, Banner2, Banner3, Banner4, Banner5, Banner6];
   return (

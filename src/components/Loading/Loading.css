@@ -6,6 +6,14 @@
   height: 100vh;
   background: #000;
 }
+.logo-loading{
+  position: absolute;
+  height: auto;
+  width: 20%;
+  top: 0px;
+  left: 40%;
+  color: #fff;
+}
 
 .body1::before {
   padding: 7.25em;
