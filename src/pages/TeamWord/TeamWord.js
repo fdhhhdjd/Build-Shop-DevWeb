@@ -107,6 +107,20 @@ const TeamWord = () => {
             <div className="service-item">
               <div className="icon">
                 <img
+                  src="https://img.icons8.com/color/48/000000/material-ui.png"
+                  className="img"
+                />
+              </div>
+              <h2>Material-Ui</h2>
+              <p className="p">
+                Trang web được sử dụng bởi material-ui thư viện giúp cho người
+                lập trình tạo giao diện nhanh hơn và đẹp hơn tiện lợi và nhanh
+                chóng,đã được công ty áp dụng.
+              </p>
+            </div>
+            <div className="service-item">
+              <div className="icon">
+                <img
                   src="https://banner2.cleanpng.com/20190319/tzk/kisspng-logo-adobe-inc-adobe-photoshop-adobe-illustrator-partners-marketing-technology-testing-hosting-5c906e91c0fc52.4602114315529693617905.jpg"
                   className="img"
                 />
@@ -134,17 +148,15 @@ const TeamWord = () => {
             <div className="project-item">
               <div className="project-info">
                 <h1>Personnel 1</h1>
-                <h2>Tên:Nguyễn Tiến Tài</h2>
                 <br />
+                <h2>Tên:Nguyễn Tiến Tài</h2>
                 <a
                   href="https://www.facebook.com/profile.php?id=100006139249437"
                   target="_blank"
                   className="a"
                 >
-                  <h2> Profile: 👉Nguyễn Tiến Tài ⭐</h2>
+                  <h2 className="profile"> Profile: 👉Nguyễn Tiến Tài ⭐</h2>
                 </a>
-
-                <br />
                 <br />
                 <p className="p">
                   21 tuổi là sinh viên năm 4,đang học tập tại trường đại học Nha
@@ -160,17 +172,17 @@ const TeamWord = () => {
             <div className="project-item">
               <div className="project-info">
                 <h1>Personnel 2</h1>
-                <h2>Tên:Nguyễn Hữu Quyền</h2>
                 <br />
+                <h2>Tên:Nguyễn Hữu Quyền</h2>
+
                 <a
                   href="https://www.facebook.com/jonhny.nguyen.184"
                   target="_blank"
                   className="a"
                 >
-                  <h2> Profile: 👉Nguyễn Hữu Quyền⭐</h2>
+                  <h2 className="profile">Profile: 👉Nguyễn Hữu Quyền⭐</h2>
                 </a>
 
-                <br />
                 <br />
                 <p className="p">
                   21 tuổi,đang là sinh viên năm 4 tại trường Đại học Công nghệ
@@ -186,17 +198,17 @@ const TeamWord = () => {
             <div className="project-item">
               <div className="project-info">
                 <h1>Personnel 3</h1>
-                <h2>Tên:Nguyễn Bảo Khang</h2>
                 <br />
+                <h2>Tên:Nguyễn Bảo Khang</h2>
+
                 <a
                   href="https://www.facebook.com/khanhgiangg102"
                   target="_blank"
                   className="a"
                 >
-                  <h2> Profile: 👉Nguyễn Bảo Khang⭐</h2>
+                  <h2 className="profile"> Profile: 👉Nguyễn Bảo Khang⭐</h2>
                 </a>
 
-                <br />
                 <br />
                 <p className="p">
                   21 tuổi,đang là sinh viên năm 2 tại trường Cao đẳng y dược nha
@@ -213,17 +225,17 @@ const TeamWord = () => {
             <div className="project-item">
               <div className="project-info">
                 <h1>Personnel 4</h1>
-                <h2>Tên:Trần Phi Hoàng</h2>
                 <br />
+                <h2>Tên:Trần Phi Hoàng</h2>
+
                 <a
                   href="https://www.facebook.com/hoang.p.tran.12"
                   target="_blank"
                   className="a"
                 >
-                  <h2> Profile: 👉Trần Phi Hoàng⭐</h2>
+                  <h2 className="profile"> Profile: 👉Trần Phi Hoàng⭐</h2>
                 </a>
 
-                <br />
                 <br />
                 <p className="p">
                   21 tuổi,đang là sinh viên năm 4 tại trường Hutech lĩnh vực
@@ -239,16 +251,17 @@ const TeamWord = () => {
             <div className="project-item">
               <div className="project-info">
                 <h1>Personnel 5</h1>
-                <h2>Tên:Bùi Huỳnh Quốc Trung</h2>
                 <br />
+                <h2>Tên:Bùi Huỳnh Quốc Trung</h2>
+
                 <a
                   href="https://www.facebook.com/profile.php?id=100009136510942"
                   target="_blank"
                   className="a"
                 >
-                  <h2> Profile: 👉Bùi Huỳnh Quốc Trung⭐</h2>
+                  <h2 className="profile">Profile: 👉Bùi Huỳnh Quốc Trung⭐</h2>
                 </a>
-                <br />
+
                 <br />
                 <p className="p">
                   20 tuổi,đang là sinh viên năm 2 tại trường Đại học Nha Trang

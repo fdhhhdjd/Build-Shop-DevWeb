@@ -8,6 +8,9 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+.profile{
+	color: rgb(153, 20, 20);
+}
 .contact-phone{
 	color: black;
 	text-decoration: none!important;

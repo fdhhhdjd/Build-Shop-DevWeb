@@ -1,6 +1,6 @@
 .footer {
     background: #303036;
-    color: #d3d3d3;
+    color: #d3d3d3!important;
     height: 400px;
     position: relative;
   }
@@ -43,6 +43,7 @@
     font-size: 1.3em;
     border-radius: 5px;
     transition: all .3s;
+    color: white ;
   
   }
   
@@ -58,6 +59,8 @@
     margin-bottom: 10px;
     font-size: 1.2em;
     transition: all .3s;
+    color: white ;
+    text-decoration: none;
   
   }
   
