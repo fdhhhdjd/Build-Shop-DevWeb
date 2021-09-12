@@ -3,12 +3,15 @@ import logger from "redux-logger";
 import thunk from "redux-thunk";
 import rootReducer from "./root-reducer";
 import { composeWithDevTools } from "redux-devtools-extension";
+//save Baskets
+import { persistStore } from "redux-persist";
+
 const middleware = [thunk];
 if (process.env.NODE_ENV === "development") {
   middleware.push(logger);
 }
-const store = createStore(
+export const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(...middleware))
 );
-export default store;
+export const persistor = persistStore(store);

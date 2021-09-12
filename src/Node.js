@@ -4,3 +4,4 @@
 //todo:............ Nếu không, nó trả về -1, cho biết rằng không có phần tử nào vượt qua bài kiểm tra.
 //!nhan du lieu customer: npm i @stripe/stripe-js @stripe/react-stripe-js
 // todo npm:npm npm i cors,npm i stripe
+//! npm i redux-persist luu lai khi trang bi loading khi mua do hang
