@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getBasketTotal } from "../../utils/BasketTotal";
 
-const SubTotal = () => {
+const SubTotal = ({ totalItems, totalPrice }) => {
   const { user, basket } = useSelector((state) => state.data);
   const history = useHistory();
   const handleCheckout = () => {
@@ -22,7 +22,11 @@ const SubTotal = () => {
         renderText={(value) => (
           <>
             <p>
-              Tổng tiền ({basket.length} sản phẩm): <strong>{value}</strong>
+              Tổng tiền <strong>{totalPrice} 🤑</strong>
+            </p>
+
+            <p>
+              số Lượng : <strong>{totalItems}</strong>
             </p>
             <small className="subtotal-gift">
               <input type="checkbox" />

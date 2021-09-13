@@ -5,3 +5,21 @@
 //!nhan du lieu customer: npm i @stripe/stripe-js @stripe/react-stripe-js
 // todo npm:npm npm i cors,npm i stripe
 //! npm i redux-persist luu lai khi trang bi loading khi mua do hang
+
+<ul>
+  <li className="nav-item">
+    <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+      Home
+    </Link>
+  </li>
+  <li
+    className="nav-item"
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+  >
+    <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
+      Services <i className="fas fa-caret-down" />
+    </Link>
+    {dropdown && <Dropdown />}
+  </li>
+</ul>;

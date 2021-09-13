@@ -36,3 +36,24 @@
   i {
     vertical-align: middle;
   }
+
+  .cartItem__qty {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cartItem__qty input {
+    padding: 10px;
+    margin-left: 0.4rem;
+    width: 60px;
+    border-radius: 20px;
+    border: 1px solid var(--secondary-color);
+    outline: none;
+  }
+  .cartItem__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.6rem;
+  }

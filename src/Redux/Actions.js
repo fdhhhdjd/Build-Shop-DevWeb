@@ -2,16 +2,23 @@ import * as types from "./Actiontypes";
 import { auth } from "../utils/firebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
-
-export const addToBasket = (item) => ({
-  type: types.ADD_TO_BASKET,
-  payload: item,
-});
-export const removeFromBasket = (id) => ({
-  type: types.REMOVE_FROM_BASKET,
-  payload: id,
-});
+import axios from "axios";
+export const addToCart = (itemID) => {
+  return {
+    type: types.ADD_TO_BASKET,
+    payload: {
+      id: itemID,
+    },
+  };
+};
+export const removeFromCart = (itemID) => {
+  return {
+    type: types.REMOVE_FROM_BASKET,
+    payload: {
+      id: itemID,
+    },
+  };
+};
 //!register
 const registerStart = () => ({
   type: types.REGISTER_START,
@@ -50,6 +57,29 @@ const logoutError = (error) => ({
   payload: error,
 });
 
+const fetchAllStart = () => ({
+  type: types.FETCH_ALL_START,
+});
+const fetchAllSuccess = (All) => ({
+  type: types.FETCH_ALL_SUCCESS,
+  payload: All,
+});
+const fetchAllFail = (Fail) => ({
+  type: types.FETCH_ALL_FAIL,
+  payload: Fail,
+});
+const fetchSearchAllStart = () => ({
+  type: types.SEARCH_ALL_START,
+});
+const fetchSearchAllSuccess = (AllSearch) => ({
+  type: types.SEARCH_ALL_SUCCESS,
+  payload: AllSearch,
+});
+
+const fetchSearchAllFail = (error) => ({
+  type: types.SEARCH_ALL_FAIL,
+  payload: error,
+});
 //!handle (sử lý)
 export const RegisterInitiate = (email, password) => {
   return function (dispatch) {
@@ -99,6 +129,36 @@ export const LogoutInitiate = () => {
       .catch((error) => dispatch(logoutError(error.message)));
   };
 };
+//!get api All
+export const setProducts = () => {
+  return function (dispatch) {
+    dispatch(fetchAllStart());
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((response) => {
+        const fetchAll = response.data;
+        dispatch(fetchAllSuccess(fetchAll));
+      })
+      .catch((error) => {
+        dispatch(fetchAllFail(error));
+      });
+  };
+};
+//!search api All
+// export const SearchAllProduct = (searchText) => {
+//   return function (dispatch) {
+//     dispatch(fetchSearchAllStart());
+//     axios
+//       .get(`https://fakestoreapi.com/products${searchText}`)
+//       .then((response) => {
+//         const cocktails = response.data.drinks;
+//         dispatch(fetchSearchAllSuccess(cocktails));
+//       })
+//       .catch((error) => {
+//         dispatch(fetchSearchAllFail(error));
+//       });
+//   };
+// };
 
 //tODO:Chỉ ở trang hiện tại khi chưa logout
 export const setUser = (user) => ({
@@ -109,3 +169,19 @@ export const setUser = (user) => ({
 export const setBasketEmpty = (basket) => ({
   type: types.SET_BASKET_EMPTY,
 });
+export const adjustItemQty = (itemID, qty) => {
+  return {
+    type: types.ADJUST_ITEM_QTY,
+    payload: {
+      id: itemID,
+      qty,
+    },
+  };
+};
+
+export const loadCurrentItem = (item) => {
+  return {
+    type: types.LOAD_CURRENT_ITEM,
+    payload: item,
+  };
+};

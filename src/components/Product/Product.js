@@ -3,49 +3,31 @@ import "./Product.css";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToBasket } from "../../Redux/Actions";
 import { ThemeContext } from "../../UseContext/ChangeTheme/ChangeTheme";
-const Product = ({
-  id,
-  title,
-  image,
-  price,
-  rating,
-  specification,
-  detail,
-}) => {
+import { addToCart, loadCurrentItem } from "../../Redux/Actions";
+const Product = ({ product }) => {
   const dispatch = useDispatch();
   const onAddItemBasket = () => {
-    const item = { id, title, image, price, rating, specification, detail };
-    dispatch(addToBasket(item));
+    dispatch(addToCart(product.id));
   };
-  // const [{ theme }] = useContext(ThemeContext);
-  // const themeStyle = {
-  //   ...{
-  //     backgroundColor: theme.backgroundColor,
-  //     color: theme.color,
-  //     transition: theme.common,
-  //   },
-  // };
+  const ClickItem = () => {
+    dispatch(loadCurrentItem(product));
+  };
   return (
     <div className="product">
       <div className="info">
-        <Link to={`/product/${id}`} className="title">
-          <p>{title}</p>
+        <Link to={`/product/${product.id}`} className="title">
+          <p onClick={ClickItem}>{product.title}</p>
         </Link>
         <p className="price">
-          <strong>$</strong>
-          <strong>{price}</strong>
+          <strong>Price: $</strong>
+          <strong>{product.price}</strong>
         </p>
-        <div className="rating">
-          {Array(rating)
-            .fill()
-            .map((_, index) => (
-              <p key={index}>⭐</p>
-            ))}
-        </div>
+        <div className="rating">Rating: {product.rating.rate} ⭐</div>
+
+        <div className="rating">quantity: {product.rating.count} 🤏</div>
       </div>
-      <img src={image} alt="" />
+      <img src={product.image} alt={product.title} />
       <button onClick={onAddItemBasket}>
         <i>
           <ShoppingCartOutlinedIcon />

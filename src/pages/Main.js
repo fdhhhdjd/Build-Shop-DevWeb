@@ -8,6 +8,9 @@ import { setUser } from "../Redux/Actions";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Loading from "../components/Loading/Loading";
+import Cocktail from "./Home/Select/Cocktail/Cocktail";
+import Clothes from "./Home/Select/Clother/Clothes";
+
 // ! const Login = lazy(() => import("./Login/Login"));
 const Home = lazy(() => {
   return new Promise((resolve) => {
@@ -104,6 +107,15 @@ const Main = () => {
               <Header />
               <Home />
             </Route>
+            <Route exact path="/cocktail">
+              <Header />
+              <Cocktail />
+            </Route>
+            <Route exact path="/clothes">
+              <Header />
+              <Clothes />
+            </Route>
+
             <Route exact path="/product/:id">
               <Header />
               <SingleProduct />

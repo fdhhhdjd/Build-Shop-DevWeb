@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import { products, headerItems } from "../../utils/ProductsData";
 import Slider from "../../components/Slider/Slider";
@@ -12,8 +12,17 @@ import Banner6 from "../../BannerImages/Banner6.jpg";
 import BackToTop from "../../components/BackToTop/BackToTop";
 import Footer from "./Footer/Footer";
 import ThemeColor from "../../components/ChangeTheme/ThemeColor";
+import { setProducts } from "../../Redux/Actions";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 const Home = () => {
   const bannerImages = [Banner1, Banner2, Banner3, Banner4, Banner5, Banner6];
+  const { basket } = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setProducts());
+  }, []);
   return (
     <div>
       <div className="item-container">
@@ -26,87 +35,38 @@ const Home = () => {
         <div className="home-container">
           <Slider images={bannerImages} />
           <div className="home-row">
-            {products.slice(0, 2).map((item) => (
-              <Product
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                price={item.price}
-                rating={item.rating}
-                image={item.image}
-                specification={item.specification}
-                detail={item.detail}
-              />
+            {basket.slice(0, 3).map((product) => (
+              <Product key={product.id} product={product} />
             ))}
           </div>
           <div className="home-row">
-            {products.slice(2, 5).map((item) => (
-              <Product
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                price={item.price}
-                rating={item.rating}
-                image={item.image}
-                specification={item.specification}
-                detail={item.detail}
-              />
+            {basket.slice(3, 6).map((product) => (
+              <Product key={product.id} product={product} />
             ))}
           </div>
           <div className="home-row">
-            {products.slice(5, 7).map((item) => (
-              <Product
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                price={item.price}
-                rating={item.rating}
-                image={item.image}
-                specification={item.specification}
-                detail={item.detail}
-              />
+            {basket.slice(6, 9).map((product) => (
+              <Product key={product.id} product={product} />
             ))}
           </div>
           <div className="home-row">
-            {products.slice(7, 10).map((item) => (
-              <Product
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                price={item.price}
-                rating={item.rating}
-                image={item.image}
-                specification={item.specification}
-                detail={item.detail}
-              />
+            {basket.slice(9, 12).map((product) => (
+              <Product key={product.id} product={product} />
             ))}
           </div>
           <div className="home-row">
-            {products.slice(10, 12).map((item) => (
-              <Product
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                price={item.price}
-                rating={item.rating}
-                image={item.image}
-                specification={item.specification}
-                detail={item.detail}
-              />
+            {basket.slice(12, 15).map((product) => (
+              <Product key={product.id} product={product} />
             ))}
           </div>
           <div className="home-row">
-            {products.slice(12, 15).map((item) => (
-              <Product
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                price={item.price}
-                rating={item.rating}
-                image={item.image}
-                specification={item.specification}
-                detail={item.detail}
-              />
+            {basket.slice(15, 18).map((product) => (
+              <Product key={product.id} product={product} />
+            ))}
+          </div>
+          <div className="home-row">
+            {basket.slice(18, 20).map((product) => (
+              <Product key={product.id} product={product} />
             ))}
           </div>
           <div>

@@ -3,25 +3,17 @@ import "./SingleProduct.css";
 import { useParams } from "react-router-dom";
 import { products } from "../../utils/ProductsData";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import { useDispatch } from "react-redux";
-import { addToBasket } from "../../Redux/Actions";
+import { useDispatch, useSelector } from "react-redux";
+
 import { ThemeContext } from "../../UseContext/ChangeTheme/ChangeTheme";
 import ThemeColor from "../../components/ChangeTheme/ThemeColor";
+import { addToCart } from "../../Redux/Actions";
 const SingleProduct = () => {
-  let { id } = useParams();
-  let singleProduct = products.find((item) => item.id === id);
+  const { currentItem } = useSelector((state) => state.data);
+  const current = currentItem;
   const dispatch = useDispatch();
   const addItemToBasket = () => {
-    const item = {
-      id: singleProduct.id,
-      rating: singleProduct.rating,
-      title: singleProduct.title,
-      price: singleProduct.price,
-      image: singleProduct.image,
-      specification: singleProduct.specification,
-      detail: singleProduct.detail,
-    };
-    dispatch(addToBasket(item));
+    dispatch(addToCart(current.id));
   };
   const { theme } = useContext(ThemeContext);
   const { light, dark, common, isFlag } = theme;
@@ -36,31 +28,32 @@ const SingleProduct = () => {
       <div>
         <div className="single-product">
           <img
-            src={singleProduct.image}
-            alt=""
+            src={current.image}
+            alt={current.title}
             className="single-product-image"
           />
           <div className="single-product-info">
-            <div className="single-product-title">{singleProduct.title}</div>
+            <div className="single-product-title">{current.title}</div>
             <div className="single-product-rating">
-              {Array(singleProduct.rating)
+              {/* {Array(singleProduct.rating)
                 .fill()
                 .map((_, index) => (
                   <p key={index}>⭐</p>
-                ))}
+                ))} */}
+              {current.rating.rate} ⭐
             </div>
+            <div className="single-product-rating">
+              quantity: {current.rating.count} 🤏
+            </div>
+
             <p className="single-product-price">
               price:<strong>$</strong>
-              <strong>{singleProduct.price}</strong>
+              <strong>{current.price}</strong>
             </p>
-            <div className="single-product-specification">
-              {singleProduct.specification.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </div>
+
             <div className="single-product-description">
               <h4>Product Description</h4>
-              <p>{singleProduct.detail}</p>
+              <p>{current.description}</p>
             </div>
             <button onClick={addItemToBasket}>
               <i>

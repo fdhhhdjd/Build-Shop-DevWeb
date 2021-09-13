@@ -7,7 +7,9 @@ const persistConfig = {
   storage,
   whitelist: ["data"],
 };
+
 const rootReducer = combineReducers({
   data: basketReducer,
 });
-export default persistReducer(persistConfig, rootReducer);
+// export default persistReducer(persistConfig, rootReducer);
+export default rootReducer;

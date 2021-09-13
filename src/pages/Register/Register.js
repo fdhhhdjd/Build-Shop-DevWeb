@@ -123,7 +123,7 @@ const Register = (props) => {
               value={password}
               validators={["isPasswordMatch1", "required"]}
               errorMessages={[
-                "Bao gồm 8 ký tự một chữ cái viết hoa, một chữ cái viết thường và một số và một ký tự đặc biệt.",
+                "Bao gồm 8 ký tự ,chữ cái viết hoa, chữ cái viết thường và một số và một ký tự đặc biệt.",
                 "Bạn cần điền mật khẩu vào",
               ]}
               autoComplete="off"
