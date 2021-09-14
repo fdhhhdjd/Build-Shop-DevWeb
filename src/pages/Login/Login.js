@@ -231,8 +231,8 @@ const Login = () => {
           <button className="login-register">Create your WebDeb account</button>
         </Link>
         <p className="login-footer">
-          <Link to="/conditions">
-            <strong className="login-footers">Conditions of Use</strong>
+          <Link to="/profile">
+            <strong className="login-footers">Profile GitHub</strong>
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Link to="/team-word">

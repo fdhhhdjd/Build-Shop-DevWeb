@@ -10,6 +10,9 @@ import { Elements } from "@stripe/react-stripe-js";
 import Loading from "../components/Loading/Loading";
 import Cocktail from "./Home/Select/Cocktail/Cocktail";
 import Clothes from "./Home/Select/Clother/Clothes";
+import Users_git from "../pages/Profile_GitHub/Page_Git/Git_pageUser";
+import Navbar_Git from "./Profile_GitHub/Page_Git/Navbar_Git";
+import Navigator from "./Profile_GitHub/Page_Git/Navigator";
 
 // ! const Login = lazy(() => import("./Login/Login"));
 const Home = lazy(() => {
@@ -62,6 +65,19 @@ const Help = lazy(() => {
     setTimeout(() => resolve(import("./HelpCustomer/Help")), 800);
   });
 });
+const Github = lazy(() => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(import("./Profile_GitHub/Github")), 1000);
+  });
+});
+const SearchGit = lazy(() => {
+  return new Promise((resolve) => {
+    setTimeout(
+      () => resolve(import("./Profile_GitHub/Page_Git/SearchGit")),
+      1000
+    );
+  });
+});
 const Error = lazy(() => import("./Error/Error"));
 const promise = loadStripe(
   "pk_test_51JXQenIBbq837XS88GNqnCjmCQ1s6JO1Dahwp43mCdZyev4l4465VtkrQhdc1JQJLyMm4ylC3mXVgADX0zM396hq00PnaQqeBv"
@@ -103,6 +119,28 @@ const Main = () => {
               <Header />
               <Help />
             </Route>
+            <Route exact path="/profile">
+              <Github />
+            </Route>
+            <Route exact path="/git_user">
+              <div className="container11">
+                <div className="navbar11">
+                  <Navbar_Git />
+                </div>
+                {/* <Navigator /> */}
+                <Users_git />
+              </div>
+            </Route>
+            <Route exact path="/git_user/:username">
+              <div className="container11">
+                <div className="navbar11">
+                  <Navbar_Git />
+                  <Navigator />
+                </div>
+                <SearchGit />
+              </div>
+            </Route>
+
             <Route exact path="/">
               <Header />
               <Home />

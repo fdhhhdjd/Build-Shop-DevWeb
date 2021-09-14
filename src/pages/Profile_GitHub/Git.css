@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.github_body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: black;
+ 
+}
+.container11   {
+  width: 80%;
+  margin: 30px auto;
+}
+
+/* Navbar */
+.navbar11 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.header11 {
+  color: inherit;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.navbar11 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-links a {
+  margin-right: 30px;
+  text-decoration: none;
+  color: #4f2aca;
+  padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+  border-bottom: 1px solid #4f2aca;
+}
+
+/* User section */
+.user-info {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  font-weight: 400;
+}
+
+.user {
+  width: 250px;
+  background: white;
+  box-shadow: 0px 2px 40px #4f2aca15;
+  padding: 20px 40px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+.user-img > img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+}
+.user-data >h1{
+  text-align: center;
+}
+
+.main-info > div {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 15px;
+  text-align: center;
+  line-height:2;
+;
+}
+
+.main-info > div > span > span {
+  color: #4f2aca;
+  font-weight: 700;
+}
+
+.font-awesome {
+  margin-right: 10px;
+}
+
+.user-button {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center!important;
+  margin-left: 30px;
+}
+
+.user-button > button {
+  display: block;
+  color: #4f2aca;
+  width: 100%;
+  text-align: left;
+  padding: 15px 15px;
+  background: none;
+  border: 1px solid #4f2aca;
+  border-radius: 3px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.user-button > button:hover {
+  background: #4f2aca;
+  color: white;
+}
+.users>h1{
+  margin-bottom: 15px;
+}
+
+/* User right section */
+.user-right {
+  background: white;
+  box-shadow: 0px 2px 40px #4f2aca1c;
+  padding: 40px 40px;
+  border-radius: 5px;
+  margin-left: 30px;
+  width: 100%;
+  font-weight: 400;
+}
+.user-bio > h1 {
+  font-size: 30px;
+}
+
+.user-bio > p {
+  font-size: 35px;
+  line-height: 5;
+}
+
+.user-secondary-info {
+  display: flex;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 2px 40px #4f2aca17;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.user-right > div > h3 {
+  margin-left: 20px;
+}
+
+.font-awesome-user-right {
+  color: #4f2aca;
+}
+
+.dates-font-awesome {
+  color: white;
+}
+
+.user-dates {
+  display: flex;
+  width: 100%;
+}
+
+.user-dates > div {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  background: #4f2aca;
+  box-shadow: 0px 2px 40px #4f2aca17;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+}
+
+.user-dates > div:last-child {
+  margin-left: 15px;
+}
+
+.user-dates > div > p {
+  margin: 0 10px;
+}
+
+/* Users section */
+.users > form > input {
+  padding: 20px 20px;
+  width: 100%;
+  background: white;
+  border: 0;
+  box-shadow: 0px 2px 10px #4f2aca25;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.multiple-users {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
+}
+
+/* Not found section */
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  opacity: 0.5;
+  user-select: none;
+}
+
+.notfound > .icon {
+  font-size: 40px;
+  color: rgb(255, 54, 54);
+}
+
+.notfound > h1 {
+}
+
+.notfound-alert {
+  color: rgb(200, 200, 200);
+  font-weight: 300;
+}

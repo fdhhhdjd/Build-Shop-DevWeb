@@ -8,14 +8,17 @@ import store from "./Redux/store";
 import { Provider } from "react-redux";
 import { ThemeContextProvider } from "./UseContext/ChangeTheme/ChangeTheme";
 import { PersistGate } from "redux-persist/integration/react";
+import { ProfileGibProvider } from "./UseContext/Profile_Git/ProfileGit";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeContextProvider>
-        {/* <PersistGate persistor={persistor}> */}
-        <App />
-        {/* </PersistGate> */}
+        <ProfileGibProvider>
+          {/* <PersistGate persistor={persistor}> */}
+          <App />
+          {/* </PersistGate> */}
+        </ProfileGibProvider>
       </ThemeContextProvider>
     </Provider>
   </React.StrictMode>,
