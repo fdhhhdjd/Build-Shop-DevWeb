@@ -11,5 +11,5 @@ const persistConfig = {
 const rootReducer = combineReducers({
   data: basketReducer,
 });
-// export default persistReducer(persistConfig, rootReducer);
-export default rootReducer;
+export default persistReducer(persistConfig, rootReducer);
+// export default rootReducer;
