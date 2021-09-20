@@ -46,6 +46,9 @@
   font-weight: 600;
   text-decoration: none;
 }
+.title:hover {
+  text-decoration: underline;
+}
 
 i {
   vertical-align: middle;

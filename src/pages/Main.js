@@ -140,7 +140,6 @@ const Main = () => {
                 <SearchGit />
               </div>
             </Route>
-
             <Route exact path="/">
               <Header />
               <Home />
