@@ -218,7 +218,7 @@ const Login = () => {
           <br />
           <ReCAPTCHA
             ref={reCaptcha}
-            sitekey="6LcaU3wcAAAAAFmPhnlnCG25It0eXA3wqChWO9z8"
+            sitekey="6LfndHwcAAAAADQNHwvmaGk-DLfeeTERl8-uZume"
             onChange={(token) => setToken(token)}
             onExpired={(e) => setToken("")}
           />
