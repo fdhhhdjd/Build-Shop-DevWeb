@@ -133,4 +133,8 @@ font-size: 11px !important;
   border: 1px solid black !important;
 
 }
+.text-danger{
+  color: red;
+  font-size:14px!important;
+}
 

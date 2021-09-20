@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Login.css";
 import logo from "../../Images/logo1.png";
 import forme from "../../Images/forme.jpg";
@@ -12,6 +12,7 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import ReCAPTCHA from "react-google-recaptcha";
 import {
   Container,
   CssBaseline,
@@ -39,8 +40,19 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loadings, setLoading] = useState(false);
   const [rememberme, setRememberMe] = useState(false);
+
+  //! ReCaptCha
+  const captcha = useRef(null);
+  const [error, setError] = useState("");
+  const [token, setToken] = useState("");
+
+  const reCaptcha = useRef();
   const signIns = async (e) => {
-    e.preventDefault();
+    if (!token) {
+      setError("Mời bạn xác thực đầy đủ 😍");
+      return;
+    }
+    setError("");
     dispatch(loginInitiate(email, password));
     setEmail("");
     setPassword("");
@@ -93,6 +105,7 @@ const Login = () => {
         toast.error(error.message);
       });
   };
+
   const history = useHistory();
   const { user } = useSelector((state) => state.data);
   const { loading } = useSelector((state) => state.data);
@@ -122,6 +135,7 @@ const Login = () => {
         <ToastContainer />
         <div className="login-container">
           <h1>Sign-In</h1>
+
           <ValidatorForm
             onSubmit={signIns}
             onError={(errors) => {
@@ -177,24 +191,38 @@ const Login = () => {
               }
               label="Remember me"
             />
-            {loading ? (
-              <ScaleLoader
-                css={override}
-                size={150}
-                color={"#eb4034"}
-                loading={loading}
-              />
-            ) : (
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                className="login-signIn "
-              >
-                Sign In
-              </Button>
-            )}
+
+            <>
+              {loading ? (
+                <ScaleLoader
+                  css={override}
+                  size={150}
+                  color={"#eb4034"}
+                  loading={loading}
+                />
+              ) : (
+                <>
+                  <br />
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    className="login-signIn "
+                  >
+                    Sign In
+                  </Button>
+                </>
+              )}
+            </>
           </ValidatorForm>
+          <br />
+          <ReCAPTCHA
+            ref={reCaptcha}
+            sitekey="6LcaU3wcAAAAAFmPhnlnCG25It0eXA3wqChWO9z8"
+            onChange={(token) => setToken(token)}
+            onExpired={(e) => setToken("")}
+          />
+          {error && <p className="text-danger">{error}</p>}
           <br />
           {loadings ? (
             <Loading />
