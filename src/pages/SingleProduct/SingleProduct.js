@@ -8,18 +8,24 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { ThemeContext } from "../../UseContext/ChangeTheme/ChangeTheme";
 import ThemeColor from "../../components/ChangeTheme/ThemeColor";
 import { addToCart } from "../../Redux/Actions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const SingleProduct = () => {
   const { currentItem } = useSelector((state) => state.data);
   const current = currentItem;
   const dispatch = useDispatch();
   const addItemToBasket = () => {
-    dispatch(addToCart(current.id));
+    dispatch(
+      addToCart(current.id),
+      toast.success("Bạn đã thêm giỏ hàng thành công 😉")
+    );
   };
   const { theme } = useContext(ThemeContext);
   const { light, dark, common, isFlag } = theme;
   const themeStyle = { ...(isFlag ? dark : light), ...common };
   return (
     <div className="single-product-container" style={themeStyle}>
+      <ToastContainer style={{ marginTop: "45px" }} />
       <img
         src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
         alt=""

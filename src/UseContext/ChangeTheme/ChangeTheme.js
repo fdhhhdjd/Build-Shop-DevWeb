@@ -28,6 +28,7 @@ export const ThemeContextProvider = ({ children }) => {
       transition: "all 1s ease",
     },
   });
+  const [search, setSearch] = useState("");
   const ToggleTheme = () => {
     setTheme({
       ...theme,
@@ -39,6 +40,8 @@ export const ThemeContextProvider = ({ children }) => {
     theme,
     setTheme,
     ToggleTheme,
+    search,
+    setSearch,
   };
   return (
     <ThemeContext.Provider

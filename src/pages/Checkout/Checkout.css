@@ -15,4 +15,13 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
   }
+  .button_comeback{
+    background: #f0c14b;
+    border: 1px solid;
+    margin-top: 10px;
+    width: 180px;
+    color: #111;
+    cursor: pointer;
+    border-color: #a88734 #9c7e31 #846a29;
+  }
   

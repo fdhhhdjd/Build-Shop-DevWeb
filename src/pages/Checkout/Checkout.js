@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import CheckoutProduct from "../../components/CheckoutProduct/CheckoutProduct";
 import SubTotal from "../../components/SubTotal/SubTotal";
 import "./Checkout.css";
+import { ToastContainer } from "react-toastify";
+import { Link } from "react-router-dom";
 const Checkout = () => {
   const { user, cart, basket } = useSelector((state) => state.data);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -22,6 +24,7 @@ const Checkout = () => {
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
   return (
     <div className="checkout">
+      <ToastContainer style={{ marginTop: "45px" }} />
       <div className="checkout-left">
         <img
           src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
@@ -41,7 +44,9 @@ const Checkout = () => {
               ? "Giỏ hàng bạn chưa có gì cả 😌"
               : "Giỏ hàng của bạn có những thứ như sau: 😍"}
           </h2>
-
+          <Link to="/">
+            <button className="button_comeback">Come Back Product ◀️</button>
+          </Link>
           {cart.map((item) => (
             <CheckoutProduct key={item.id} item={item} />
           ))}

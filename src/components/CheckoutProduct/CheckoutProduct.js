@@ -3,12 +3,20 @@ import { useDispatch } from "react-redux";
 import "./CheckoutProduct.css";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { adjustItemQty, removeFromCart } from "../../Redux/Actions";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const CheckoutProduct = ({ item }) => {
   const [input, setInput] = useState(item.qty);
   const dispatch = useDispatch();
   const removeItemFromBasket = () => {
-    dispatch(removeFromCart(item.id));
+    if (window.confirm("Are you sure you want to remove 😔")) {
+      dispatch(
+        removeFromCart(item.id),
+        toast.error("Bạn đã xóa thành công 🥺")
+      );
+    } else {
+      return;
+    }
   };
   const onChangeHandler = (e) => {
     setInput(e.target.value);

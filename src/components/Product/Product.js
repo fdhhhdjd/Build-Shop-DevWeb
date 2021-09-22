@@ -4,10 +4,15 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart, loadCurrentItem } from "../../Redux/Actions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Product = ({ product }) => {
   const dispatch = useDispatch();
   const onAddItemBasket = () => {
-    dispatch(addToCart(product.id));
+    dispatch(
+      addToCart(product.id),
+      toast.success("Bạn đã thêm giỏ hàng thành công 😉")
+    );
   };
   const ClickItem = () => {
     dispatch(loadCurrentItem(product));

@@ -1,12 +1,22 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Dropdown.css";
 const Dropdown = ({ select, setSelect }) => {
   const [isActive, setIsActive] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "") {
+      setSelect("All product 😍");
+    } else if (location.pathname === "/cocktail") {
+      setSelect("Cocktail");
+    } else if (location.pathname === "/clothes") {
+      setSelect("Clothes");
+    }
+  }, [location]);
   const options = [
     {
       id: 1,
-      name: "ALL",
+      name: "All product 😍",
       path: "",
     },
     {
@@ -18,11 +28,6 @@ const Dropdown = ({ select, setSelect }) => {
       id: 3,
       name: "Clothes",
       path: "clothes",
-    },
-    {
-      id: 4,
-      name: "Angular",
-      path: "angular",
     },
   ];
   return (
@@ -42,7 +47,11 @@ const Dropdown = ({ select, setSelect }) => {
                       setIsActive(false);
                     }}
                   >
-                    <Link to={`/${item.path}`}>{item.name}</Link>
+                    <Link to={`/${item.path}`}>
+                      <p onClick={() => setSelect(`${item.name}`)}>
+                        {item.name}
+                      </p>
+                    </Link>
                   </div>
                 </>
               ))}
