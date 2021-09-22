@@ -2,7 +2,6 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Header from "../components/Header/Header";
-// import Error from "./Error/Error";
 import { auth } from "../utils/firebase";
 import { setUser } from "../Redux/Actions";
 import { loadStripe } from "@stripe/stripe-js";
