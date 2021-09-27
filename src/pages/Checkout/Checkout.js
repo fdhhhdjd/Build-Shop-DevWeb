@@ -129,32 +129,40 @@ const Checkout = () => {
           {/* Pagination */}
 
           {renderData(currentItems)}
-          <ul className="pageNumbers">
-            <li>
-              <button
-                onClick={handlePrevbtn}
-                disabled={currentPage == pages[0] ? true : false}
-              >
-                Prev
-              </button>
-            </li>
+          {cart.length === 0 ? (
+            ""
+          ) : (
+            <>
+              <ul className="pageNumbers">
+                <li>
+                  <button
+                    onClick={handlePrevbtn}
+                    disabled={currentPage == pages[0] ? true : false}
+                  >
+                    Prev
+                  </button>
+                </li>
 
-            {pageDecrementBtn}
-            {renderPageNumbers}
-            {pageIncrementBtn}
+                {pageDecrementBtn}
+                {renderPageNumbers}
+                {pageIncrementBtn}
 
-            <li>
-              <button
-                onClick={handleNextbtn}
-                disabled={currentPage == pages[pages.length - 1] ? true : false}
-              >
-                Next
+                <li>
+                  <button
+                    onClick={handleNextbtn}
+                    disabled={
+                      currentPage == pages[pages.length - 1] ? true : false
+                    }
+                  >
+                    Next
+                  </button>
+                </li>
+              </ul>
+              <button onClick={handleLoadMore} className="loadmore">
+                Load More
               </button>
-            </li>
-          </ul>
-          <button onClick={handleLoadMore} className="loadmore">
-            Load More
-          </button>
+            </>
+          )}
         </div>
       </div>
 

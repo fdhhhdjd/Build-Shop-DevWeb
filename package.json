@@ -29,6 +29,7 @@
     "react-fontawesome": "^1.7.1",
     "react-google-recaptcha": "^2.1.0",
     "react-instagram-embed": "^3.0.0",
+    "react-loader-spinner": "^4.0.0",
     "react-material-ui-form-validator": "^2.1.4",
     "react-moment": "^1.1.1",
     "react-redux": "^7.2.4",

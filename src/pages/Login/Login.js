@@ -274,10 +274,7 @@ const Login = () => {
         <p className="name-login">
           © 2021-2022, ShopWebDev.com, Wellcome for you
         </p>
-        <a
-          href="https://www.facebook.com/profile.php?id=100006139249437"
-          target="_blank"
-        >
+        <a href="https://profile-forme.surge.sh/" target="_blank">
           <img src={forme} alt="" className="login-logo1" />
         </a>
       </div>

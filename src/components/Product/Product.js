@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addToCart, loadCurrentItem } from "../../Redux/Actions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const Product = ({ product }) => {
+const Product = ({ product, error }) => {
   const dispatch = useDispatch();
   const onAddItemBasket = () => {
     dispatch(
@@ -19,6 +19,7 @@ const Product = ({ product }) => {
   };
   return (
     <div className="product">
+      {error && <p className="text-danger">{error}</p>}
       <div className="info">
         <Link to={`/product/${product.id}`} className="title">
           <p onClick={ClickItem}>{product.title}</p>
