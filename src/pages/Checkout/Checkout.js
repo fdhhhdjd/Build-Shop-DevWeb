@@ -5,6 +5,7 @@ import SubTotal from "../../components/SubTotal/SubTotal";
 import "./Checkout.css";
 import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
+import EmptyCart from "../EmptyCart";
 
 const Checkout = () => {
   const { user, cart, basket } = useSelector((state) => state.data);
@@ -118,14 +119,20 @@ const Checkout = () => {
               : "Tên bạn cũng chưa có,bạn chưa đăng nhập luôn đó 😞"}
             {user?.email.split("@gmail.com")}.
           </h3>
-          <h2 className="checkout-title">
-            {cart.length === 0
-              ? "Giỏ hàng bạn chưa có gì cả 😌"
-              : "Giỏ hàng của bạn có những thứ như sau: 😍"}
-          </h2>
           <Link to="/">
             <button className="button_comeback">Come Back Product ◀️</button>
           </Link>
+          <h2 className="checkout-title">
+            {cart.length === 0 ? (
+              <>
+                "Giỏ hàng của bạn chẳng có gì 😔 "
+                <EmptyCart />
+              </>
+            ) : (
+              "Giỏ hàng của bạn có những thứ như sau: 😍"
+            )}
+          </h2>
+
           {/* Pagination */}
 
           {renderData(currentItems)}
