@@ -62,7 +62,7 @@ const Header = () => {
           <div className="header-option" onClick={handleAuthLogout}>
             <span className="header-option1">
               {user ? " hello 😄" : "No,go Login "},
-              {user ? user.displayName || user.email.split("@gmail.com") : "😞"}
+              {user ? user.email.split("@gmail.com") : "😞"}
             </span>
             <span className="header-option-1">
               {user ? "Log Out" : "Sign In"}

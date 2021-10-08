@@ -7,7 +7,7 @@ import CheckoutProduct from "../../components/CheckoutProduct/CheckoutProduct";
 import { getBasketTotal } from "../../utils/BasketTotal";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "../../utils/axios";
-import { db, auth } from "../../utils/firebase";
+import { db } from "../../utils/firebase";
 import { setBasketEmpty } from "../../Redux/Actions";
 import { ToastContainer, toast, style } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,7 +18,6 @@ const Payment = () => {
   let dispatch = useDispatch();
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-  const users = auth.currentUser;
 
   useEffect(() => {
     let items = 0;
@@ -58,11 +57,10 @@ const Payment = () => {
               <h3>Thông tin của bạn 🧐 </h3>
             </div>
             <div className="payment-address">
-              <p>
-                {(user && user.displayName) || user.email.split("@gmail.com")}
-              </p>
+              <p>{user && user.email.split("@gmail.com")}</p>
               <p>Tổ 9 Thị Trấn Vạn Giã</p>
               <p>Khánh Hòa</p>
+              <p>{user && user.displayName}</p>
             </div>
           </div>
           <div className="payment-section">

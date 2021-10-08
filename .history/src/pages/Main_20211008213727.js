@@ -84,7 +84,6 @@ const promise = loadStripe(
 const Main = () => {
   const dispatch = useDispatch();
   const [Toggle, setToggle] = useState(true);
-  const [a, setA] = useState("");
   const formMode = () => {
     setToggle(!Toggle);
   };
@@ -92,7 +91,6 @@ const Main = () => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         dispatch(setUser(authUser));
-        setA(authUser);
       } else {
         dispatch(setUser(null));
       }

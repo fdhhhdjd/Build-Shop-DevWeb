@@ -48,10 +48,10 @@ const Login = () => {
 
   const reCaptcha = useRef();
   const signIns = async (e) => {
-    // if (!token) {
-    //   setError("Mời bạn xác thực đầy đủ 😍");
-    //   return;
-    // }
+    if (!token) {
+      setError("Mời bạn xác thực đầy đủ 😍");
+      return;
+    }
     setError("");
     dispatch(loginInitiate(email, password));
     setEmail("");
@@ -217,12 +217,12 @@ const Login = () => {
             </>
           </ValidatorForm>
           <br />
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             ref={reCaptcha}
             sitekey="6LfndHwcAAAAADQNHwvmaGk-DLfeeTERl8-uZume"
             onChange={(token) => setToken(token)}
             onExpired={(e) => setToken("")}
-          />
+          /> */}
           {error && <p className="text-danger">{error}</p>}
           <br />
           {loadings ? (

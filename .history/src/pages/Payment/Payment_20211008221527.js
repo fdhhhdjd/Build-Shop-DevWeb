@@ -18,7 +18,7 @@ const Payment = () => {
   let dispatch = useDispatch();
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-  const users = auth.currentUser;
+  const user = auth.currentUser;
 
   useEffect(() => {
     let items = 0;
@@ -58,9 +58,7 @@ const Payment = () => {
               <h3>Thông tin của bạn 🧐 </h3>
             </div>
             <div className="payment-address">
-              <p>
-                {(user && user.displayName) || user.email.split("@gmail.com")}
-              </p>
+              <p>{user && user.email.split("@gmail.com")}</p>
               <p>Tổ 9 Thị Trấn Vạn Giã</p>
               <p>Khánh Hòa</p>
             </div>

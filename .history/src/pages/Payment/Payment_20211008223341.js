@@ -62,7 +62,7 @@ const Payment = () => {
                 {(user && user.displayName) || user.email.split("@gmail.com")}
               </p>
               <p>Tổ 9 Thị Trấn Vạn Giã</p>
-              <p>Khánh Hòa</p>
+              <p>Khánh Hòa.</p>
             </div>
           </div>
           <div className="payment-section">

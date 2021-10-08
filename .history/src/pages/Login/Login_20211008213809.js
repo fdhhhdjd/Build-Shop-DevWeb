@@ -48,10 +48,10 @@ const Login = () => {
 
   const reCaptcha = useRef();
   const signIns = async (e) => {
-    // if (!token) {
-    //   setError("Mời bạn xác thực đầy đủ 😍");
-    //   return;
-    // }
+    if (!token) {
+      setError("Mời bạn xác thực đầy đủ 😍");
+      return;
+    }
     setError("");
     dispatch(loginInitiate(email, password));
     setEmail("");

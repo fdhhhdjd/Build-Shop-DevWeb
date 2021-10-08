@@ -63,6 +63,7 @@ const Payment = () => {
               </p>
               <p>Tổ 9 Thị Trấn Vạn Giã</p>
               <p>Khánh Hòa</p>
+              <p>{user.isEmailVerified}</p>
             </div>
           </div>
           <div className="payment-section">
