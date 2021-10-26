@@ -10,7 +10,7 @@ import { LogoutInitiate } from "../../Redux/Actions";
 import Dropdown from "../Dropdown/Dropdown";
 import { ThemeContext } from "../../UseContext/ChangeTheme/ChangeTheme";
 const Header = () => {
-  const { user, cart } = useSelector((state) => state.data);
+  const { user, basket, cart } = useSelector((state) => state.data);
   const [cartCount, setCartCount] = useState(0);
   const [select, setSelect] = useState("All product 😍");
   const dispatch = useDispatch();
@@ -63,7 +63,8 @@ const Header = () => {
             <span className="header-option1">
               {user ? " hello 😄" : "No,go Login "},
               {user ? user.displayName || user.email.split("@gmail.com") : "😞"}
-            </span>
+            </span>{" "}
+            */}
             <span className="header-option-1">
               {user ? "Log Out" : "Sign In"}
             </span>

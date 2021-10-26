@@ -40,6 +40,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loadings, setLoading] = useState(false);
   const [rememberme, setRememberMe] = useState(false);
+
   //! ReCaptCha
   const captcha = useRef(null);
   const [error, setError] = useState("");
@@ -226,7 +227,7 @@ const Login = () => {
           {loadings ? (
             <Loading />
           ) : (
-            <Button
+            <ButtonP
               type="submit"
               fullWidth
               variant="contained"

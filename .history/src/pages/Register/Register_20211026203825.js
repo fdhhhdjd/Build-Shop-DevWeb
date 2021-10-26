@@ -16,17 +16,16 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Register = (props) => {
   const classes = useStyles();
+  // const [displayName, setDisplayName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
   const [state, setState] = useState({
     displayName: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmPassword,
   });
-  const { displayName, email, password, confirmPassword } = state;
-  const handleChangeValue = (e) => {
-    let { name, value } = e.target;
-    setState({ ...state, [name]: value });
-  };
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const { user } = useSelector((state) => state.data);
@@ -40,8 +39,19 @@ const Register = (props) => {
   const SubmitRegister = (e) => {
     e.preventDefault();
     dispatch(RegisterInitiate(email, password, displayName));
-    setState({ displayName: "", email: "", password: "", confirmPassword: "" });
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
+  // const handleEmail = (event) => {
+  //   setEmail(event.target.value);
+  // };
+  // const handlePassword = (event) => {
+  //   setPassword(event.target.value);
+  // };
+  // const handleConfirmPassowerd = (event) => {
+  //   setConfirmPassword(event.target.value);
+  // };
   const showPasswords = () => {
     setShowPassword(!showPassword);
   };
@@ -90,7 +100,7 @@ const Register = (props) => {
               margin="normal"
               fullWidth
               label="Name"
-              onChange={handleChangeValue}
+              // onChange={handleEmail}
               name="displayName"
               value={displayName}
               validators={["required"]}
@@ -103,7 +113,7 @@ const Register = (props) => {
               margin="normal"
               fullWidth
               label="Email"
-              onChange={handleChangeValue}
+              // onChange={handleEmail}
               name="email"
               value={email}
               validators={["required", "isEmail"]}
@@ -116,7 +126,7 @@ const Register = (props) => {
               variant="outlined"
               fullWidth
               label="Password"
-              onChange={handleChangeValue}
+              // onChange={handlePassword}
               name="password"
               type={showPassword ? "text" : "password"}
               value={password}
@@ -141,7 +151,7 @@ const Register = (props) => {
               variant="outlined"
               label="Confirm password"
               fullWidth
-              onChange={handleChangeValue}
+              // onChange={handleConfirmPassowerd}
               name="confirmPassword"
               type={showConfirm ? "text" : "password"}
               validators={["isPasswordMatch", "required"]}

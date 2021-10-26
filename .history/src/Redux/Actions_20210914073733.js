@@ -68,16 +68,25 @@ const fetchAllFail = (Fail) => ({
   type: types.FETCH_ALL_FAIL,
   payload: Fail,
 });
+const fetchSearchAllStart = () => ({
+  type: types.SEARCH_ALL_START,
+});
+const fetchSearchAllSuccess = (AllSearch) => ({
+  type: types.SEARCH_ALL_SUCCESS,
+  payload: AllSearch,
+});
+
+const fetchSearchAllFail = (error) => ({
+  type: types.SEARCH_ALL_FAIL,
+  payload: error,
+});
 //!handle (sử lý)
-export const RegisterInitiate = (email, password, displayName) => {
+export const RegisterInitiate = (email, password) => {
   return function (dispatch) {
     dispatch(registerStart());
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(({ user }) => {
-        user.updateProfile({
-          displayName,
-        });
         dispatch(registerSuccess(user));
       })
       .catch((error) => {
