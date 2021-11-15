@@ -1,11 +1,11 @@
 body[data-theme='dark'] {
-  background-color: black !important;
-  color: white;
+  background-color: white !important;
+  color: black;
   transition: all .4s linear;
 }
 body[data-theme='light'] {
-  background-color:white;
-  color:black;
+  background-color:black;
+  color:white;
   transition: all .4s linear;
 }
 body {

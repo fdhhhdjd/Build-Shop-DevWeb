@@ -1,0 +1,10 @@
+body[data-theme='dark'] {
+ background-color: black;
+ color: white;
+    transition: all .4s linear;
+  }
+  body[data-theme='light'] {
+ background-color:white;
+    transition: all .4s linear;
+  }
+  

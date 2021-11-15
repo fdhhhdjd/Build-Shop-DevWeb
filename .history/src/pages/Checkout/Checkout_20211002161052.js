@@ -22,7 +22,7 @@ const Checkout = () => {
     });
 
     setTotalItems(items);
-    setTotalPrice(price.toFixed(2));
+    setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
   //!Paginator

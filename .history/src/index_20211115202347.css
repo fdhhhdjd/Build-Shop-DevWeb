@@ -1,5 +1,5 @@
 body[data-theme='dark'] {
-  background-color: black !important;
+  background-color: black;
   color: white;
   transition: all .4s linear;
 }
